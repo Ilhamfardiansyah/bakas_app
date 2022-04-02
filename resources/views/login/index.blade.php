@@ -17,7 +17,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 @endif --}}
-                    <form action="/login_post" method="post" class="card-body cardbody-color p-lg-5">
+                    <form action="/login" method="post" class="card-body cardbody-color p-lg-5">
                         @csrf
                         <div class="text-center">
                             <img src="https://cdn.pixabay.com/photo/2016/03/31/19/56/avatar-1295397__340.png"

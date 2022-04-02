@@ -1,26 +1,51 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
     <div class="container">
-        <a class="navbar-brand" href="#">BAKAS STORE :</a>
+        <a class="navbar-brand" href="#">BAKAS STORE</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="#" id="tanggalwaktu"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon">
-                <script type="text/javascript">
-                    var dt = new Date();
-                    document.getElementById("tanggalwaktu").innerHTML = dt.toLocaleString();
-                </script>
-            </span>
-        </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            {{-- <ul class="navbar-nav">
+            <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/home">Home</a>
+                    <a class="nav-link active" aria-current="page" id="clock">Home</a>
+                    <script type="text/javascript">
+                        <!--
+                        function showTime() {
+                            var a_p = "";
+                            var today = new Date();
+                            var curr_hour = today.getHours();
+                            var curr_minute = today.getMinutes();
+                            var curr_second = today.getSeconds();
+                            if (curr_hour < 12) {
+                                a_p = "AM";
+                            } else {
+                                a_p = "PM";
+                            }
+                            if (curr_hour == 0) {
+                                curr_hour = 12;
+                            }
+                            if (curr_hour > 12) {
+                                curr_hour = curr_hour - 12;
+                            }
+                            curr_hour = checkTime(curr_hour);
+                            curr_minute = checkTime(curr_minute);
+                            curr_second = checkTime(curr_second);
+                            document.getElementById('clock').innerHTML = curr_hour + ":" + curr_minute + ":" + curr_second + " " + a_p;
+                        }
+
+                        function checkTime(i) {
+                            if (i < 10) {
+                                i = "0" + i;
+                            }
+                            return i;
+                        }
+                        setInterval(showTime, 500);
+                        //
+                        -->
+                    </script>
                 </li>
-            </ul> --}}
+            </ul>
             <ul class=" navbar-nav ms-auto">
                 @auth
                     <li class="nav-item dropdown">

@@ -8,6 +8,6 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return view('layouts.v_template');
+        return view('dashboard.index');
     }
 }
