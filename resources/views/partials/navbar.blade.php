@@ -1,16 +1,26 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
     <div class="container">
-        <a class="navbar-brand" href="#">Bakas Store</a>
+        <a class="navbar-brand" href="#">BAKAS STORE :</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+        <a class="navbar-brand" href="#" id="tanggalwaktu"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon">
+                <script type="text/javascript">
+                    var dt = new Date();
+                    document.getElementById("tanggalwaktu").innerHTML = dt.toLocaleString();
+                </script>
+            </span>
+        </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+            {{-- <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="/home">Home</a>
                 </li>
-            </ul>
+            </ul> --}}
             <ul class=" navbar-nav ms-auto">
                 @auth
                     <li class="nav-item dropdown">
@@ -19,24 +29,32 @@
                             Selamat Datang ,{{ auth()->user()->username }} Nik: {{ auth()->user()->nik }}
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#"><i class="bi bi-house-fill"></i> Warehouse</a></li>
+                            <li><a class="dropdown-item" href="/dashboard"><i class="bi bi-house-fill"></i> Warehouse</a>
+                            </li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
                             <li>
-                                <form action="/logout" method="post">
-                                    @csrf
-                                    <button type="submit" class="dropdown-item"><i class="bi bi-door-closed-fill"></i> Log
-                                        Out</button>
-                                </form>
+                            <li>
+                                <a type="submit" class="dropdown-item" href="/register"><i
+                                        class="bi bi-person-plus-fill"></i>
+                                    Tambah
+                                    User
+                                </a>
                             </li>
-                        </ul>
+                            <form action="/logout" method="post">
+                                @csrf
+                                <button type="submit" class="dropdown-item"><i class="bi bi-door-closed-fill"></i> Log
+                                    Out</button>
+                            </form>
                     </li>
-                @else
-                    <li class="nav-item">
-                        <a href="/login" class="nav-link"><i class="bi bi-door-open-fill"></i> Login</a>
-                    </li>
-                @endauth
+                </ul>
+                </li>
+            @else
+                <li class="nav-item">
+                    <a href="/login" class="nav-link"><i class="bi bi-door-open-fill"></i> Login</a>
+                </li>
+            @endauth
             </ul>
         </div>
     </div>
