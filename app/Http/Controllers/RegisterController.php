@@ -27,7 +27,7 @@ class RegisterController extends Controller
         $validateData['password'] = bcrypt($validateData['password']);
 
     User::create($validateData);
-        Alert::success('Selamat', 'You\'ve Successfully Registered');
-    return redirect('/');
+        Alert::success('Selamat', 'Akun Anda Berhasil Terbuat');
+    return redirect('/login');
     }
 }

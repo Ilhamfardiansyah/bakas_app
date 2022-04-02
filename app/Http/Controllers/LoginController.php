@@ -29,7 +29,7 @@ class LoginController extends Controller
             $request->session()->regenerate();
             Alert::success('Congrats', 'You\'ve Successfully Registered');
 
-            return redirect()->intended('/dashboard');
+            return redirect()->intended('/dashboahomrd');
         }
         else {
         Alert::error('Nik dan Password Salah', 'Silahkan login kembali');
