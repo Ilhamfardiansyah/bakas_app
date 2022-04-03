@@ -30,3 +30,7 @@ Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 
 Route::resource('/dashboard/produk', DashboardProdukController::class)->middleware('auth');
+
+Route::get('/calendar', function () {
+    return view('dashboard.calendar.index');
+});

@@ -38,7 +38,7 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="dashboard/produk" class="nav-link active">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="bi bi-archive-fill"></i>
                                 <p>Stock Product</p>
                             </a>
                         </li>
@@ -51,10 +51,10 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
+                    <a href="/calendar" class="nav-link">
+                        <i class="bi bi-calendar-day-fill"></i>
                         <p>
-                            Simple Link
+                            Calendar
                             <span class="right badge badge-danger">New</span>
                         </p>
                     </a>

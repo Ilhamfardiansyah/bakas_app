@@ -5,8 +5,17 @@
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="{{ asset('template/plugins/fontawesome-free/css/all.min.css') }}">
     <!-- Theme style -->
+    <script src="{{ asset('template/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <!-- jQuery UI -->
+    <script src="{{ asset('template/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('template/dist/css/adminlte.min.css') }}">
     <!-- DataTables -->
+    <!-- fullCalendar 2.2.5 -->
+    <script src="{{ asset('template/plugins/moment/moment.min.js') }}"></script>
+    <script src="{{ asset('template/plugins/fullcalendar/main.js') }}"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="{{ asset('template/dist/js/demo.js') }}"></script>
+
     <link rel="stylesheet" href="{{ asset('template/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('template/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('template/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
@@ -157,8 +166,6 @@
                         <script src="{{ asset('template/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
                         <!-- AdminLTE App -->
                         <script src="{{ asset('template/dist/js/adminlte.min.js') }}"></script>
-                        <!-- jQuery -->
-                        <script src="{{ asset('template/plugins/jquery/jquery.min.js') }}"></script>
                         <!-- Bootstrap 4 -->
                         <script src="{{ asset('template/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
                         <!-- DataTables  & Plugins -->

@@ -13,7 +13,7 @@ class DashboardProdukController extends Controller
      */
     public function index()
     {
-        return view('dashboard.layout.index');
+        return view('dashboard.layout.produk');
     }
 
     /**
