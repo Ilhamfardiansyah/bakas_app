@@ -36,11 +36,7 @@
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
-        <!-- Preloader -->
-        <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="{{ asset('template/dist/img/AdminLTELogo.png') }}" alt="" height="60"
-                width="60">
-        </div>
+
         @include('sweetalert::alert')
 
         @include('dashboard.layout.header')
