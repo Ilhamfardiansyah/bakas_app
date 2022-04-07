@@ -14,7 +14,10 @@ class DashboardPostController extends Controller
      */
     public function index()
     {
-        //
+        return Post::all();
+        return view('dashboard.posts.index', [
+            'post' => Post::all();
+        ]);
     }
 
     /**

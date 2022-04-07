@@ -42,7 +42,10 @@
                 width="60">
         </div>
         @include('sweetalert::alert')
+
         @include('dashboard.layout.header')
+
+        @include('dashboard.layout.sidebar')
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->

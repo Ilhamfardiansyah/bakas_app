@@ -5,7 +5,8 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\DashboardProdukController;
+use App\Http\Controllers\DashboardPostController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,6 @@ Route::get('/dashboard', function(){
     return view('dashboard.index');
 })->middleware('auth');
 
-Route::resource('/dashboard/produk', DashboardProdukController::class)->middleware('auth');
+Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
 
 
