@@ -6,7 +6,6 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardPostController;
-use App\Http\Controllers\DashboardInputController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,5 +33,5 @@ Route::get('/dashboard', function(){
 
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
 
-Route::resource('/dashboard/input', DashboardInputController::class)->middleware('auth');
+// Route::resource('/dashboard/posts/input', DashboardPostController::class)->middleware('auth');
 

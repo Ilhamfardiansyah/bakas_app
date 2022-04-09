@@ -45,7 +45,8 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/dashboard/input" class="nav-link">
+                        <a href="/dashboard/posts/create"
+                            class="nav-link {{ Request::is('dashboard/posts/create') ? 'active' : '' }}">
                             <i class="nav-icon fas bi-box-arrow-in-down"></i>
                             <p>
                                 Input Barang
