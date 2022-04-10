@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('rak_id');
             $table->string('id_barang', 5);
             $table->string('barcode');
             $table->text('nama_barang');

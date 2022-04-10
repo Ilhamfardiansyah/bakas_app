@@ -14,10 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('tb_rak', function (Blueprint $table) {
-            $table->integer('kd_rak');
-            $table->varchar('rak_1');
-            $table->varchar('rak_2');
-            $table->varchar('rak_3');
+            $table->id();
+            $table->string('name')->unique();
             $table->timestamps();
         });
     }

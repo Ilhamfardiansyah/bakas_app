@@ -17,12 +17,11 @@
                 <input type="text" class="form-control" name="nama_barang" id="nama_barang" placeholder="Nama Barang">
             </div>
             <div class="container mb-3">
-                <label for="text" class="form-label">Rak</label>
-                <select class="form-select" name="rak" id="rak">
-                    <option selected>Pilih Rak</option>
-                    <option value="1">Rak 1</option>
-                    <option value="2">Rak 2</option>
-                    <option value="3">Rak 3</option>
+                <label for="tb_rak" class="form-label">Rak</label>
+                <select class="form-select" name="rak_id">
+                    @foreach ($tb_rak as $rak)
+                    @endforeach
+                    <option value="{{ $rak->id }}">{{ $rak->name }}</option>
                 </select>
             </div>
             <div class="container mb-3">

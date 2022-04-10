@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Rak;
 use Illuminate\Http\Request;
 
 class DashboardPostController extends Controller
@@ -15,9 +16,7 @@ class DashboardPostController extends Controller
     public function index()
     {
         
-        return view('dashboard.posts.index', [
-            'post' => Post::all()
-        ]);
+        return view('dashboard.posts.index');
     }
 
     /**
@@ -27,7 +26,9 @@ class DashboardPostController extends Controller
      */
     public function create()
     {
-        return view('dashboard.posts.create');
+        return view('dashboard.posts.create', [
+            'tb_rak' => Rak::all()
+        ]);
     }
 
     /**
