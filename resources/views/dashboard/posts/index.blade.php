@@ -23,14 +23,15 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($post as $posts)
-                                    @endforeach
-                                    <tr>
-                                        <td>{{ $posts->plu }}</td>
-                                        <td>{{ $posts->nama_barang }}</td>
-                                        <td>{{ $posts->barcode }}</td>
-                                        <td>{{ $posts->rak }}</td>
-                                        <td> {{ $posts->stok }}</td>
-                                    </tr>
+                                        <tr>
+                                            <td>{{ $posts->plu }}</td>
+                                            <td>{{ $posts->nama_barang }}</td>
+                                            <td>{{ $posts->barcode }}</td>
+                                            <td><a href="/rak/{{ $posts->rak->name }}">{{ $posts->rak->name }}</a> </td>
+                                            <td> {{ $posts->stok }}</td>
+                                        </tr>
+
+
                                 </tbody>
                                 <tfoot>
                                     <tr>
