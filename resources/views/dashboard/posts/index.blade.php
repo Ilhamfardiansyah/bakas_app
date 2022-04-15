@@ -30,8 +30,7 @@
                                             <td><a href="/rak/{{ $posts->rak->name }}">{{ $posts->rak->name }}</a> </td>
                                             <td> {{ $posts->stok }}</td>
                                         </tr>
-
-
+                                    @endforeach
                                 </tbody>
                                 <tfoot>
                                     <tr>

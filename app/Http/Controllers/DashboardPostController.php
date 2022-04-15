@@ -28,9 +28,9 @@ class DashboardPostController extends Controller
      */
     public function create()
     {
-        // return view('dashboard.posts.create', [
-        //     'tb_rak' => Rak::all()
-        // ]);
+        return view('dashboard.posts.create', [
+            'raks' => Rak::all()
+        ]);
     }
 
     /**
