@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Models\Rak;
 use Illuminate\Http\Request;
+use Alert;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardPostController extends Controller
 {
@@ -41,7 +43,17 @@ class DashboardPostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validateData = $request->validate([    
+            'plu' => 'required|unique:posts', 
+            'nama_barang' => 'required',
+            'barcode' => 'required|unique:posts',
+            'rak_id' => 'required',
+            'stok' => 'required'
+        ]);
+
+        Post::create($validateData);
+        toast('Produk Berhasil Ditambahkan','success');
+        return redirect('/dashboard/posts');
     }
 
     /**

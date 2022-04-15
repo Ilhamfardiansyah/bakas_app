@@ -17,6 +17,9 @@ class RegisterController extends Controller
 
     public function store(Request $request)
     {
+
+        return $request->file('file')->store('post-images');
+
         $validateData = $request->validate([
             'username' => 'required|max:255',
             'nik' => 'required|min:8|max:8|unique:users',
