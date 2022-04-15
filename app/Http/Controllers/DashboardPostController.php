@@ -31,7 +31,7 @@ class DashboardPostController extends Controller
     public function create()
     {
         return view('dashboard.posts.create', [
-            'raks' => Rak::all()
+            'raks' => Rak::all(),
         ]);
     }
 
