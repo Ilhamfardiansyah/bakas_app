@@ -11,7 +11,8 @@
             <!-- Sidebar user panel (optional) -->
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                 <div class="image">
-                    <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                    <img src="{{ asset('storage/' . auth()->user()->file) }}" class="img-circle elevation-2"
+                        alt="User Image">
                 </div>
                 <div class="info">
                     <a href="#" class="d-block">{{ auth()->user()->username }}</a>
@@ -63,8 +64,9 @@
                     <li class="nav-item">
                         <form action="/logout" method="post">
                             @csrf
-                            <button type="submit" class="nav-link"><i class="bi bi-door-closed-fill"></i> Log
-                                Out</button>
+                            <button type="submit" class="nav-link border-0"><i class="bi bi-door-closed-fill"></i>
+                                <p>Log Out</p>
+                            </button>
                         </form>
                     </li>
                 </ul>

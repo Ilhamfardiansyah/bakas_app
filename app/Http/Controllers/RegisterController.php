@@ -18,14 +18,16 @@ class RegisterController extends Controller
     public function store(Request $request)
     {
 
-        return $request->file('file')->store('post-images');
-
-        $validateData = $request->validate([
+            $validateData = $request->validate([
             'username' => 'required|max:255',
             'nik' => 'required|min:8|max:8|unique:users',
-            'file' => 'required|mimes:jpeg,jpg,png,gif',
+            'file' => 'image|file|max:1024|required|mimes:jpeg,jpg,png,gif',
             'password' => 'required|min:5|max:255'
         ]);
+
+        if($request->file('file')) {
+            $validateData['file'] = $request->file('file')->store('post-image');
+        }
 
         $validateData['password'] = bcrypt($validateData['password']);
 

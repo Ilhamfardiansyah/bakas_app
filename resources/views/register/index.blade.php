@@ -38,7 +38,7 @@
                         </div>
                         <div class="mb-3">
                             <input type="file" name="file" class="form-control @error('file') is-invalid @enderror"
-                                id="file" placeholder="Foto" required value="{{ old('file') }}">
+                                id="file" placeholder="Foto" required>
                             @error('file')
                                 <div class=" invalid-feedback">
                                     {{ $message }}
