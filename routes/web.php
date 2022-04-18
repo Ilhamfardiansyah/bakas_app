@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardPostController;
+use App\Models\Rak;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,5 +34,11 @@ Route::get('/dashboard', function(){
 
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
 
+Route::get('/detail_rak/{rak:name}', function(Rak $rak){
+    return view('dashboard.detail_rak', [
+        'posts' => $rak->posts,
+        'rak' => $rak->nama_barang
+    ]);
+})->middleware('auth');
 // Route::resource('/dashboard/posts/input', DashboardPostController::class)->middleware('auth');
 

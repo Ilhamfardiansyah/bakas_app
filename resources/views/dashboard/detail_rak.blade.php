@@ -12,43 +12,34 @@
                         <!-- /.card-header -->
                         <div class="card-body">
                             <table id="example2" class="table table-bordered table-hover">
+                                Selamat Datang
                                 <thead>
                                     <tr>
-                                        <th>PLU</th>
+                                        <th>Rak</th>
                                         <th>Nama Barang</th>
                                         <th>Barcode</th>
-                                        <th>Rak</th>
+                                        <th>PLU</th>
                                         <th>Stok</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($post as $posts)
+                                    @foreach ($posts as $post)
                                         <tr>
-                                            <td>{{ $posts->plu }}</td>
-                                            <td>{{ $posts->nama_barang }}</td>
-                                            <td>{{ $posts->barcode }}</td>
-                                            <td><a
-                                                    href="/detail_rak/{{ $posts->rak->name }}">{{ $posts->rak->name }}</a>
-                                            </td>
-                                            <td> {{ $posts->stok }}</td>
+                                            <td>{{ $post->rak->name }}</td>
+                                            <td>{{ $post->nama_barang }}</td>
+                                            <td>{{ $post->barcode }}</td>
+                                            <td>{{ $post->plu }}</td>
+                                            <td> {{ $post->stok }}</td>
                                         </tr>
                                     @endforeach
-                                </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th>PLU</th>
+                                        <th>Rak</th>
                                         <th>Nama Barang</th>
                                         <th>Barcode</th>
-                                        <th>Rak</th>
+                                        <th>PLU</th>
                                         <th>Stok</th>
                                     </tr>
                                 </tfoot>
-                            </table>
-                        </div>
-                        <!-- /.card-body -->
-                    </div>
-                    <!-- /.card -->
-                    </tbody>
-                    <tfoot>
-    </section>
-@endsection
+                                <tbody>
+                                @endsection

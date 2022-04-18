@@ -1,4 +1,3 @@
-<nav class="mt-2">
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
         <a href="index3.html" class="brand-link">
@@ -37,22 +36,88 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ Request::is('dashboard/posts') ? 'active' : '' }}"
-                            href="/dashboard/posts">
-                            <i class="nav-icon fas bi-box-seam"></i>
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p>
-                                Inventory
+                                Master
+                                <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/dashboard/posts"
+                                    class="nav-link {{ Request::is('dashboard/posts') ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Inventory</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/dashboard/posts/create"
+                                    class="nav-link {{ Request::is('dashboard/posts/create') ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Tambah stok</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/dashboard/posts/suplaier" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Input Barang Baru</p>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
+                    <li class="nav-header">Stok Opname</li>
                     <li class="nav-item">
-                        <a href="/dashboard/posts/create"
-                            class="nav-link {{ Request::is('dashboard/posts/create') ? 'active' : '' }}">
-                            <i class="nav-icon fas bi-box-arrow-in-down"></i>
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-circle"></i>
                             <p>
-                                Input Barang
+                                Pilih Rak
+                                <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Rak 1</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>
+                                        Level 2
+                                        <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">
+                                            <i class="far fa-dot-circle nav-icon"></i>
+                                            <p>Level 3</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">
+                                            <i class="far fa-dot-circle nav-icon"></i>
+                                            <p>Level 3</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">
+                                            <i class="far fa-dot-circle nav-icon"></i>
+                                            <p>Level 3</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Level 2</p>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     <li class="nav-header">MISCELLANEOUS</li>
                     <li class="nav-item">
@@ -75,4 +140,3 @@
         </div>
         <!-- /.sidebar -->
     </aside>
-</nav>

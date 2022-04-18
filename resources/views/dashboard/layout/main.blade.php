@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bakas | Dashboard Warehouse</title>
+    <title>AdminLTE 3 | Simple Search Form</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -29,48 +29,61 @@
     <link rel="stylesheet" href="{{ asset('template/plugins/daterangepicker/daterangepicker.css') }}">
     <!-- summernote -->
     <link rel="stylesheet" href="{{ asset('template/plugins/summernote/summernote-bs4.min.css') }}">
-    {{-- Bootstrap Icon --}}
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 </head>
 
-
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
-
-        @include('sweetalert::alert')
-
+        <!-- Navbar -->
         @include('dashboard.layout.header')
+        <!-- /.navbar -->
+
         <!-- Main Sidebar Container -->
         @include('dashboard.layout.sidebar')
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
-            <div class="content-header">
-                @yield('container')
-            </div>
-            <!-- /.content -->
+            @yield('container')
+            <!-- Main content -->
+            {{-- <section class="content">
+                <div class="container-fluid">
+                    <h2 class="text-center display-4">Search</h2>
+                    <div class="row">
+                        <div class="col-md-8 offset-md-2">
+                            <form action="simple-results.html">
+                                <div class="input-group">
+                                    <input type="search" class="form-control form-control-lg"
+                                        placeholder="Type your keywords here">
+                                    <div class="input-group-append">
+                                        <button type="submit" class="btn btn-lg btn-default">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section> --}}
         </div>
-        <!-- /.content-wrapper -->
-        <!-- Main Footer -->
+
+        <!-- Main footer -->
         <footer class="main-footer">
-            <!-- To the right -->
-            <div class="float-right d-none d-sm-inline">
-                Anything you want
+            <div class="float-right d-none d-sm-block">
+                <b>Version</b> 3.2.0
             </div>
-            <!-- Default to the left -->
             <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights
             reserved.
         </footer>
-    </div>
-    <script>
-        var myModal = document.getElementById('myModal')
-        var myInput = document.getElementById('myInput')
 
-        myModal.addEventListener('shown.bs.modal', function() {
-            myInput.focus()
-        })
-    </script>
-    <!-- jQuery -->
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
+    </div>
+    <!-- ./wrapper -->
+
     <script src="{{ asset('template/plugins/jquery/jquery.min.js') }}"></script>
     <!-- jQuery UI 1.11.4 -->
     <script src="{{ asset('template/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
@@ -104,6 +117,7 @@
     {{-- <script src="{{ asset('template/dist/js/demo.js') }}"></script> --}}
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{{ asset('template/dist/js/pages/dashboard.js') }}"></script>
+
 </body>
 
 </html>
