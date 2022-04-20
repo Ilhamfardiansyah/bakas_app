@@ -13,15 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('suplaiers', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('rak_id');
-            $table->foreignId('suplaier_id');
-            $table->string('plu');
-            $table->text('nama_barang');
-            $table->char('barcode');
-            $table->char('stok');
-            $table->timestamp('publish_at')->nullable();
+            $table->char('name')->unique();
+            $table->char('alamat');
             $table->timestamps();
         });
     }
@@ -33,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('suplaiers');
     }
 };

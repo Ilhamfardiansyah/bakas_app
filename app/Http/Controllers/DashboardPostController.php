@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Models\Rak;
+use App\Models\Suplaier;
 use Illuminate\Http\Request;
 use Alert;
 use Illuminate\Support\Facades\Auth;
@@ -19,7 +20,8 @@ class DashboardPostController extends Controller
     {
         
         return view('dashboard.posts.index', [
-            'post' => Post::all()
+            'post' => Post::all(),
+            'suplaier' => Suplaier::all()
         ]);
     }
 
@@ -43,7 +45,9 @@ class DashboardPostController extends Controller
      */
     public function store(Request $request)
     {
-        $validateData = $request->validate([    
+        $validateData = $request->validate([ 
+            'name' => 'required',  
+            'alamat' => 'required',
             'plu' => 'required|unique:posts', 
             'nama_barang' => 'required',
             'barcode' => 'required|unique:posts',

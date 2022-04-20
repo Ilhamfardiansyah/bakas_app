@@ -19,6 +19,8 @@
                                         <th>Barcode</th>
                                         <th>Rak</th>
                                         <th>Stok</th>
+                                        <th>Suplaier</th>
+                                        <th>Alamat</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -31,8 +33,9 @@
                                                     href="/detail_rak/{{ $posts->rak->name }}">{{ $posts->rak->name }}</a>
                                             </td>
                                             <td> {{ $posts->stok }}</td>
-                                        </tr>
+                                            <td>{{ $posts->name }}</td>
                                     @endforeach
+                                    </tr>
                                 </tbody>
                                 <tfoot>
                                     <tr>
@@ -41,6 +44,8 @@
                                         <th>Barcode</th>
                                         <th>Rak</th>
                                         <th>Stok</th>
+                                        <th>Suplaier</th>
+                                        <th>Alamat</th>
                                     </tr>
                                 </tfoot>
                             </table>

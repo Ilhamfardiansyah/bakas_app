@@ -8,6 +8,26 @@
         <form method="post" action="/dashboard/posts">
             @csrf
             <div class="mb-3">
+                <label for="name" class="form-label">Nama Suplaier</label>
+                <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name"
+                    value="{{ old('name') }}" required autofocus>
+                @error('name')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
+            </div>
+            <div class="mb-3">
+                <label for="alamat" class="form-label">Alamat</label>
+                <input type="text" class="form-control @error('alamat') is-invalid @enderror" id="alamat" name="alamat"
+                    value="{{ old('alamat') }}" required autofocus>
+                @error('alamat')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
+            </div>
+            <div class="mb-3">
                 <label for="plu" class="form-label">PLU</label>
                 <input type="number" class="form-control @error('plu') is-invalid @enderror" id="plu" name="plu"
                     value="{{ old('plu') }}" required autofocus>
