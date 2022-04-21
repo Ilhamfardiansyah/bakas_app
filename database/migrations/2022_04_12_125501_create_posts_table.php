@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->foreignId('rak_id');
-            $table->foreignId('suplaier_id');
             $table->string('plu');
             $table->text('nama_barang');
             $table->char('barcode');

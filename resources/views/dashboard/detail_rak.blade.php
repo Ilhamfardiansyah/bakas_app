@@ -12,7 +12,6 @@
                         <!-- /.card-header -->
                         <div class="card-body">
                             <table id="example2" class="table table-bordered table-hover">
-                                Selamat Datang
                                 <thead>
                                     <tr>
                                         <th>Rak</th>
@@ -32,6 +31,7 @@
                                             <td> {{ $post->stok }}</td>
                                         </tr>
                                     @endforeach
+                                </tbody>
                                 <tfoot>
                                     <tr>
                                         <th>Rak</th>
@@ -41,5 +41,12 @@
                                         <th>Stok</th>
                                     </tr>
                                 </tfoot>
-                                <tbody>
-                                @endsection
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                    </tbody>
+                    <tfoot>
+    </section>
+@endsection

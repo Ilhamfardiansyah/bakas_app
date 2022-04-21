@@ -2,13 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
-use App\Models\Rak;
 use Illuminate\Http\Request;
-use Alert;
-use Illuminate\Support\Facades\Auth;
-
-class DashboardPostController extends Controller
+use App\Models\Suplaier;
+class SuplaierController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,10 +13,7 @@ class DashboardPostController extends Controller
      */
     public function index()
     {
-        
-        return view('dashboard.posts.index', [
-            'post' => Post::all()
-        ]);
+        //
     }
 
     /**
@@ -30,8 +23,7 @@ class DashboardPostController extends Controller
      */
     public function create()
     {
-        return view('dashboard.posts.create', [
-            'raks' => Rak::all(),
+        return view('dashboard.suplaier.create', [
             'suplaier' => Suplaier::all()
         ]);
     }
@@ -44,26 +36,24 @@ class DashboardPostController extends Controller
      */
     public function store(Request $request)
     {
-        $validateData = $request->validate([ 
-            'plu' => 'required|unique:posts', 
-            'nama_barang' => 'required',
-            'barcode' => 'required|unique:posts',
-            'rak_id' => 'required',
-            'stok' => 'required'
+        $validateData = $request->validate([
+            'name' => 'required',
+            'alamat' => 'required',
+            'no_telp' => 'required',
+            'kode_po' => 'required'
         ]);
 
-        Post::create($validateData);
-        toast('Produk Berhasil Ditambahkan','success');
-        return redirect('/dashboard/posts');
+        Suplaier::create($validateData);
+        return redirect('/dashboard/suplaier/create');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Post  $post
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+    public function show($id)
     {
         //
     }
@@ -71,10 +61,10 @@ class DashboardPostController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Post  $post
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    public function edit($id)
     {
         //
     }
@@ -83,10 +73,10 @@ class DashboardPostController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Post  $post
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -94,10 +84,10 @@ class DashboardPostController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Post  $post
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
+    public function destroy($id)
     {
         //
     }

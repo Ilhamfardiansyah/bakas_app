@@ -26,7 +26,7 @@ class RegisterController extends Controller
         ]);
 
         if($request->file('file')) {
-            $validateData['file'] = $request->file('file')->store('post-image');
+            $validateData['file'] = $request->file('file')->store('post-images');
         }
 
         $validateData['password'] = bcrypt($validateData['password']);

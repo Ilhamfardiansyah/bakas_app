@@ -6,7 +6,9 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardPostController;
+use App\Http\Controllers\SuplaierController;
 use App\Models\Rak;
+use App\Models\Suplaier;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,5 +42,7 @@ Route::get('/detail_rak/{rak:name}', function(Rak $rak){
         'rak' => $rak->nama_barang
     ]);
 })->middleware('auth');
+
+Route::resource('/dashboard/suplaier', SuplaierController::class)->middleware('auth');
 // Route::resource('/dashboard/posts/input', DashboardPostController::class)->middleware('auth');
 

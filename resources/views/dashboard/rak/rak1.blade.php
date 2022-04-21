@@ -22,15 +22,13 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($post as $posts)
+                                    @foreach ($posts as $post)
                                         <tr>
-                                            <td>{{ $posts->plu }}</td>
-                                            <td>{{ $posts->nama_barang }}</td>
-                                            <td>{{ $posts->barcode }}</td>
-                                            <td><a
-                                                    href="/detail_rak/{{ $posts->rak->name }}">{{ $posts->rak->name }}</a>
-                                            </td>
-                                            <td> {{ $posts->stok }}</td>
+                                            <td>{{ $post->rak->name }}</td>
+                                            <td>{{ $post->nama_barang }}</td>
+                                            <td>{{ $post->barcode }}</td>
+                                            <td>{{ $post->plu }}</td>
+                                            <td> {{ $post->stok }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>
