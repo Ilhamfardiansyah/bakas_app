@@ -18,7 +18,7 @@ return new class extends Migration
             $table->char('name')->unique();
             $table->char('alamat');
             $table->char('no_telp');
-            $table->char('kode_po');`
+            $table->char('kode_po');
             $table->timestamps();
         });
     }

@@ -3,10 +3,29 @@
 </script>
 
 @section('container')
-    <div class="col-lg-8">
+    <div class="col-lg-7">
         @include('sweetalert::alert')
-        <form method="post" action="/dashboard/posts">
+        <form method="post" action="{{ url('dashboard/posts') }}">
             @csrf
+            <div class="mb-3">
+                <label for="kode_po" class="form-label">Kode PO</label>
+                <select class="form-select" name="kode_po" required>
+                    <option selected>Pilih Suplaier</option>
+                    @foreach ($suplaiers as $suplaier)
+                        <option value="{{ $suplaier->id }}">{{ $suplaier->kode_po }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="no_po" class="form-label">Nomer PO</label>
+                <input type="number" class="form-control @error('no_po') is-invalid @enderror" id="no_po" name="no_po"
+                    value="{{ old('no_po') }}" required autofocus>
+                @error('no_po')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
+            </div>
             <div class="mb-3">
                 <label for="plu" class="form-label">PLU</label>
                 <input type="number" class="form-control @error('plu') is-invalid @enderror" id="plu" name="plu"

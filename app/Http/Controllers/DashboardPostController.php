@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Models\Rak;
+use App\Models\Suplaier;
 use Illuminate\Http\Request;
 use Alert;
 use Illuminate\Support\Facades\Auth;
@@ -32,7 +33,7 @@ class DashboardPostController extends Controller
     {
         return view('dashboard.posts.create', [
             'raks' => Rak::all(),
-            'suplaier' => Suplaier::all()
+            'suplaiers' => Suplaier::all()
         ]);
     }
 
@@ -44,7 +45,10 @@ class DashboardPostController extends Controller
      */
     public function store(Request $request)
     {
+        
         $validateData = $request->validate([ 
+            'suplaier_id' => 'required',
+            'no_po' => 'required',
             'plu' => 'required|unique:posts', 
             'nama_barang' => 'required',
             'barcode' => 'required|unique:posts',
@@ -52,9 +56,19 @@ class DashboardPostController extends Controller
             'stok' => 'required'
         ]);
 
-        Post::create($validateData);
+        // $validator = validator()->make(request()->all(), [
+        //     'type' => 'required|integer'
+        // ]);
+        
+        // if ($validator->fails()) {
+        //     redirect()->back()->with('eror' ,['SALAH!!']);
+        // }
+
+        Post::create([
+            'posts' => $request->post,
+                    ]);
         toast('Produk Berhasil Ditambahkan','success');
-        return redirect('/dashboard/posts');
+        return redirect('/dashboard/index');
     }
 
     /**

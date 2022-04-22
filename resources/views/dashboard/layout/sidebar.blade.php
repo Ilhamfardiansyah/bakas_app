@@ -58,8 +58,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#S"
-                                    class="nav-link {{ Request::is('dashboard/posts/create') ? 'active' : '' }}">
+                                <a href="#S" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Tambah item baru</p>
                                 </a>
