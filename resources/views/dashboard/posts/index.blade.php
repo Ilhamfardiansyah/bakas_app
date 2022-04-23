@@ -2,6 +2,7 @@
 
 @section('container')
     <section class="content">
+        @include('sweetalert::alert')
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">

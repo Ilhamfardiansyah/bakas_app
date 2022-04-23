@@ -44,6 +44,7 @@ class SuplaierController extends Controller
         ]);
 
         Suplaier::create($validateData);
+        toast('Data Suplaier Berhasil Ditambahkan','success');
         return redirect('/dashboard/suplaier/create');
     }
 

@@ -8,6 +8,7 @@ use App\Models\Suplaier;
 use Illuminate\Http\Request;
 use Alert;
 use Illuminate\Support\Facades\Auth;
+use App\http\Requests\StoreTransaction;
 
 class DashboardPostController extends Controller
 {
@@ -20,7 +21,8 @@ class DashboardPostController extends Controller
     {
         
         return view('dashboard.posts.index', [
-            'post' => Post::all()
+            'post' => Post::all(),
+            'rak' => Rak::all()
         ]);
     }
 
@@ -43,18 +45,18 @@ class DashboardPostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreTransaction $request)
     {
+
+        try{
+  
+        Post::create($request->validated());
+        toast('Produk Berhasil Ditambahkan','success');
+        return redirect('/dashboard/posts');
+        }catch(\Throwable $e){
+            dd($e->getMessage());
+        }
         
-        $validateData = $request->validate([ 
-            'suplaier_id' => 'required',
-            'no_po' => 'required',
-            'plu' => 'required|unique:posts', 
-            'nama_barang' => 'required',
-            'barcode' => 'required|unique:posts',
-            'rak_id' => 'required',
-            'stok' => 'required'
-        ]);
 
         // $validator = validator()->make(request()->all(), [
         //     'type' => 'required|integer'
@@ -64,11 +66,6 @@ class DashboardPostController extends Controller
         //     redirect()->back()->with('eror' ,['SALAH!!']);
         // }
 
-        Post::create([
-            'posts' => $request->post,
-                    ]);
-        toast('Produk Berhasil Ditambahkan','success');
-        return redirect('/dashboard/index');
     }
 
     /**

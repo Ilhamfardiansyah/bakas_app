@@ -36,6 +36,8 @@ Route::get('/dashboard', function(){
 
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
 
+Route::post('/coba/post', [DashboardPostController::class,'store'])->name('coba.post')->middleware('auth');
+
 Route::get('/detail_rak/{rak:name}', function(Rak $rak){
     return view('dashboard.detail_rak', [
         'posts' => $rak->posts,

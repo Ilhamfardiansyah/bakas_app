@@ -74,7 +74,7 @@
                     </li>
                     <li class="nav-header">Stok Opname</li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="" class="nav-link">
                             <i class="nav-icon fas fa-circle"></i>
                             <p>
                                 Pilih Rak
@@ -83,10 +83,12 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Rak 1</p>
-                                </a>
+                                <form action="/dashboard/posts" method="GET">
+                                    <a href="#" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Rak 1</p>
+                                    </a>
+                                </form>
                             </li>
                         </ul>
                     </li>
