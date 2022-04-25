@@ -26,13 +26,15 @@
                                     @csrf
                                     <div class="mb-3">
                                         <label for="suplaier_id" class="form-label">Suplaier</label>
-                                        <select class="form-select" name="suplaier_id" required>
-                                            <option selected>Pilih Suplaier</option>
-                                            @foreach ($suplaiers as $suplaier)
-                                                <option value="{{ $suplaier->id }}">{{ $suplaier->kode_po }}
-                                                    {{ $suplaier->name }}</option>
-                                            @endforeach
-                                        </select>
+                                        <div class="form-group">
+                                            <select class="form-control select2" name="suplaier_id" style="width: 100%;">
+                                                <option selected="selected">Kode Suplaier</option>
+                                                @foreach ($suplaiers as $suplaier)
+                                                    <option value="{{ $suplaier->id }}">{{ $suplaier->kode_po }}
+                                                        {{ $suplaier->name }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
                                     </div>
                                     <div class="mb-3">
                                         <label for="no_po" class="form-label">Nomer PO</label>
@@ -77,12 +79,15 @@
                                     <div class="mb-3">
                                         <label for="rak_id"
                                             class="form-label @error('rak_id') is-invalid @enderror">Rak</label>
-                                        <select class="form-select" name="rak_id" required>
-                                            <option selected>Pilih Rak</option>
-                                            @foreach ($raks as $rak)
-                                                <option value="{{ $rak->id }}">{{ $rak->name }}</option>
-                                            @endforeach
-                                        </select>
+                                        <div class="form-group">
+                                            <select class="form-control select2" name="suplaier_id" style="width: 100%;">
+                                                <option selected="selected">Pilih Rak</option>
+                                                @foreach ($raks as $rak)
+                                                    <option value="{{ $rak->id }}">
+                                                        {{ $rak->name }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
                                     </div>
                                     <div class="mb-3">
                                         <label for="stok" class="form-label">Stok</label>
@@ -102,8 +107,6 @@
                         <!-- /.card-body -->
                     </div>
                     <!-- /.card -->
-                    </tbody>
-                    <tfoot>
     </section>
 
 @endsection

@@ -10,13 +10,25 @@
             <!-- Sidebar user panel (optional) -->
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                 <div class="image">
-                    <img src="{{ asset('storage/' . auth()->user()->file) }}" class="img-circle elevation-2" alt="#">
+                    <img src="{{ asset('storage/' . auth()->user()->file) }}" class="rounded" alt="#">
                 </div>
                 <div class="info">
                     <a href="#" class="d-block">{{ auth()->user()->username }}</a>
                 </div>
             </div>
 
+            {{-- search --}}
+            <div class="form-inline">
+                <div class="input-group" data-widget="sidebar-search">
+                    <input class="form-control form-control-sidebar" type="search" placeholder="Search"
+                        aria-label="Search">
+                    <div class="input-group-append">
+                        <button class="btn btn-sidebar">
+                            <i class="fas fa-search fa-fw"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
             <!-- Sidebar Menu -->
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
@@ -28,7 +40,7 @@
                     <li class="nav-header">MENU</li>
                     <li class="nav-item">
                         <a class="nav-link {{ Request::is('dashboard') ? 'active' : '' }}" href="/dashboard">
-                            <i class="nav-icon fas bi-speedometer2"></i>
+                            <i class="nav-icon fas fa-solid fa-chart-line"></i>
                             <p>
                                 Dashboard
                             </p>
@@ -36,7 +48,7 @@
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <i class="nav-icon fas fa-solid fa-box"></i>
                             <p>
                                 Master
                                 <i class="right fas fa-angle-left"></i>
@@ -46,27 +58,38 @@
                             <li class="nav-item">
                                 <a href="/dashboard/posts"
                                     class="nav-link {{ Request::is('dashboard/posts') ? 'active' : '' }}">
-                                    <i class="far fa-circle nav-icon"></i>
+                                    <i class="far fa-solid fa-boxes-stacked"></i>
                                     <p>Inventory</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="/dashboard/posts/create"
                                     class="nav-link {{ Request::is('dashboard/posts/create') ? 'active' : '' }}">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Tambah stok</p>
+                                    <i class="far fa-solid fa-cart-arrow-down"></i>
+                                    <p>Tambah Item Baru</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="#S" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Tambah item baru</p>
+                                    <i class="far fa-solid fa-file-arrow-down"></i>
+                                    <p>Update Stok</p>
                                 </a>
                             </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-solid fa-file-invoice"></i>
+                            <p>
+                                Suplaier
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="/dashboard/suplaier/create"
                                     class="nav-link {{ Request::is('dashboard/suplaier/create') ? 'active' : '' }}">
-                                    <i class="far fa-circle nav-icon"></i>
+                                    <i class="far fa-solid fa-calendar-plus"></i>
                                     <p>Input suplaier baru</p>
                                 </a>
                             </li>
