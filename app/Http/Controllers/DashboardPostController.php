@@ -32,14 +32,14 @@ class DashboardPostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
+       {
         return view('dashboard.posts.create', [
+            'post' => Post::all(),
             'raks' => Rak::all(),
             'suplaiers' => Suplaier::all()
         ]);
     }
-
-    /**
+       /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request

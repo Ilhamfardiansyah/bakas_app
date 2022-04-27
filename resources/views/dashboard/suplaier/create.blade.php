@@ -3,9 +3,9 @@
 @section('container')
     <section class="content">
         @include('sweetalert::alert')
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
-                <div class="col-6">
+                <div class="col-12">
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">DataTable with minimal features & hover style</h3>
@@ -72,57 +72,47 @@
 
                     <!-- /.card -->
     </section>
-    <section class="content ms-auto">
-        @include('sweetalert::alert')
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">DataTable with minimal features & hover style</h3>
-                        </div>
-                        <!-- /.card-header -->
-                        <div class="card-body">
-                            @if ($errors->any())
-                                <ul class="alert alert-danger">
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            @endif
-                            <div class="col-lg-7">
-                                @include('sweetalert::alert')
-                                <table border="1" width="200" height="200">
-                                    <tr>
-                                        <td>1</td>
-                                        <td>2</td>
-                                        <td>3</td>
-                                    </tr>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>2</td>
-                                        <td>3</td>
-                                    </tr>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>2</td>
-                                        <td>3</td>
-                                    </tr>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>2</td>
-                                        <td>3</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2">1</td>
-                                        <td>3</td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
-                        <!-- /.card-body -->
-                    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title"><b>Data Suplaier Masuk</b></h3>
+                </div>
+                <div class="card-body table-responsive p-0" style="height: 300px;">
+                    <table class="table table-head-fixed text-nowrap">
+                        <thead>
+                            <tr>
+                                <th>Nama Suplaier</th>
+                                <th>Kode Suplaier</th>
+                                <th>Alamat Suplaier</th>
+                                <th>No Tlp</th>
+                                <th>Tanggal Suplaier Masuk</th>
 
-                    <!-- /.card -->
-    </section>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($suplaier as $suplaiers)
+                                <tr>
+                                    <td>{{ $suplaiers->name }}</td>
+                                    <td>{{ $suplaiers->kode_po }}</td>
+                                    <td>{{ $suplaiers->alamat }}</td>
+                                    <td>{{ $suplaiers->no_telp }}</td>
+                                    <td>{{ $suplaiers->created_at }}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>Nama Suplaier</th>
+                                <th>Kode Suplaier</th>
+                                <th>Alamat Suplaier</th>
+                                <th>no telpon</th>
+                                <th>Tanggal Suplaier Masuk</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection

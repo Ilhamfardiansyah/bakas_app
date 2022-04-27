@@ -7,6 +7,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardPostController;
 use App\Http\Controllers\SuplaierController;
+use App\Http\Controllers\ReturController;
 use App\Models\Rak;
 use App\Models\Suplaier;
 
@@ -36,6 +37,7 @@ Route::get('/dashboard', function(){
 
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
 
+
 Route::post('/coba/post', [DashboardPostController::class,'store'])->name('coba.post')->middleware('auth');
 
 Route::get('/detail_rak/{rak:name}', function(Rak $rak){
@@ -48,3 +50,8 @@ Route::get('/detail_rak/{rak:name}', function(Rak $rak){
 Route::resource('/dashboard/suplaier', SuplaierController::class)->middleware('auth');
 // Route::resource('/dashboard/posts/input', DashboardPostController::class)->middleware('auth');
 
+// Route::get('/dashboard/retur', function(){
+//     return view('dashboard.retur');
+// });
+
+Route::get('/dashboard/retur', ReturController::class, 'index')->middleware('auth');

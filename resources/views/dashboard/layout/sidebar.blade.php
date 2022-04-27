@@ -71,8 +71,14 @@
                             </li>
                             <li class="nav-item">
                                 <a href="#S" class="nav-link">
-                                    <i class="far fa-solid fa-file-arrow-down"></i>
+                                    <i class="fa-solid fa-box-open"></i>
                                     <p>Update Stok</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/dashboard/retur" class="nav-link">
+                                    <i class="fa-solid fa-truck-ramp-box"></i>
+                                    <p>Retur Barang</p>
                                 </a>
                             </li>
                         </ul>
