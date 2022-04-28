@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Alert;
 use Auth;
+use DB;
 class RegisterController extends Controller
 {
     public function index()
@@ -35,4 +36,5 @@ class RegisterController extends Controller
         Alert::success('Selamat', 'Akun Anda Berhasil Terbuat');
     return redirect('/login');
     }
-}
+
+   }

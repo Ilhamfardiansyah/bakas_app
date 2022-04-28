@@ -7,9 +7,10 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardPostController;
 use App\Http\Controllers\SuplaierController;
-use App\Http\Controllers\ReturController;
 use App\Models\Rak;
 use App\Models\Suplaier;
+use App\Http\Controllers\ReturController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -54,4 +55,6 @@ Route::resource('/dashboard/suplaier', SuplaierController::class)->middleware('a
 //     return view('dashboard.retur');
 // });
 
-Route::get('/dashboard/retur', ReturController::class, 'index')->middleware('auth');
+Route::resource('/dashboard/retur', ReturController::class)->middleware('auth');
+
+Route::get('/scan/{barcode}', [DashboardPostController::class, 'scan']);

@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Alert;
 use Illuminate\Support\Facades\Auth;
 use App\http\Requests\StoreTransaction;
+use DB;
 
 class DashboardPostController extends Controller
 {
@@ -111,5 +112,13 @@ class DashboardPostController extends Controller
     public function destroy(Post $post)
     {
         //
+    }
+     public function scan($barcode)
+    {
+       $data =  DB::table('posts')->where('barcode', $barcode)->first();
+       return response()->json([
+           'status' => 'ok',
+           'data' => $data
+       ]);
     }
 }

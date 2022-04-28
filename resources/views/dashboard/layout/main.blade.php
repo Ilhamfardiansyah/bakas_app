@@ -42,6 +42,13 @@
     <link rel="stylesheet"
         href="{{ asset('template/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('template/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
+    <script src="{{ asset('template/plugins/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('template/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
+    {{-- <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script> --}}
+
+    <script src="{{ asset('template/dist/js/instascan.min.js') }}"></script>
+
+    
 
 </head>
 
@@ -96,13 +103,12 @@
     </div>
     <!-- ./wrapper -->
 
-    <script src="{{ asset('template/plugins/jquery/jquery.min.js') }}"></script>
     <!-- jQuery UI 1.11.4 -->
-    <script src="{{ asset('template/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>
         $.widget.bridge('uibutton', $.ui.button)
     </script>
+
     <!-- Bootstrap 4 -->
     <script src="{{ asset('template/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <!-- ChartJS -->
