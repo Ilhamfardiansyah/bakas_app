@@ -70,7 +70,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#S" class="nav-link">
+                                <a href="/dashboard/posts/edit" class="nav-link">
                                     <i class="fa-solid fa-box-open"></i>
                                     <p>Update Stok</p>
                                 </a>
