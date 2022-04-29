@@ -21,6 +21,7 @@
                                         <th>Nama Barang</th>
                                         <th>Barcode</th>
                                         <th>Rak</th>
+                                        <th>Harga Satuan</th>
                                         <th>Stok</th>
                                     </tr>
                                 </thead>
@@ -33,6 +34,7 @@
                                             <td><a
                                                     href="/detail_rak/{{ $posts->rak->name }}">{{ $posts->rak->name }}</a>
                                             </td>
+                                            <td>{{ number_format($posts->harga_satuan, 0,',', '.') }}</td>
                                             <td> {{ $posts->stok }}</td>
                                         </tr>
                                     @endforeach
@@ -43,6 +45,7 @@
                                         <th>Nama Barang</th>
                                         <th>Barcode</th>
                                         <th>Rak</th>
+                                        <th>Harga Satuan</th>
                                         <th>Stok</th>
                                     </tr>
                                 </tfoot>

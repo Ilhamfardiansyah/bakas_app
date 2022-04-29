@@ -83,7 +83,7 @@
                         <thead>
                             <tr>
                                 <th>Nama Suplaier</th>
-                                <th>Kode Suplaier</th>
+                                <th>No Invoice</th>
                                 <th>Alamat Suplaier</th>
                                 <th>No Tlp</th>
                                 <th>Tanggal Suplaier Masuk</th>
@@ -104,7 +104,7 @@
                         <tfoot>
                             <tr>
                                 <th>Nama Suplaier</th>
-                                <th>Kode Suplaier</th>
+                                <th>No Invoice</th>
                                 <th>Alamat Suplaier</th>
                                 <th>no telpon</th>
                                 <th>Tanggal Suplaier Masuk</th>

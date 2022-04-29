@@ -15,4 +15,9 @@ class Post extends Model
     {
         return $this->belongsTo(Rak::class);
     }
+
+    public function suplaier()
+    {
+        return $this->belongsTo(Suplaier::class);
+    }
 }

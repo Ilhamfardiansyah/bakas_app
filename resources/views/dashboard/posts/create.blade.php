@@ -26,7 +26,7 @@
                             @csrf
                             <div class="form-row">
                                 <div class="form-group col-md-4">
-                                    <label for="suplaier_id" class="form-label">Suplaier</label>
+                                    <label for="suplaier_id" class="form-label">No Invoice</label>
                                     <select class="form-control select2" name="suplaier_id" style="width: 100%;">
                                         <option selected="selected">Kode Suplaier</option>
                                         @foreach ($suplaiers as $suplaier)
@@ -89,9 +89,29 @@
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="stok" class="form-label">Stok</label>
-                                    <input type="number" class="form-control @error('stok') is-invalid @enderror" id="stok"
+                                    <input type="number" class="form-control @error('stok') is-invalid @enderror" id="stok" onkeyup="sum();"
                                         name="stok" value="{{ old('stok') }}" required>
                                     @error('stok')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="harga_satuan" class="form-label">Harga Satuan</label>
+                                    <input type="number" class="form-control @error('harga_satuan') is-invalid @enderror" id="harga_satuan" onkeyup="sum();" 
+                                        name="harga_satuan" value="{{ old('harga_satuan') }}" required>
+                                    @error('harga_satuan')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="sub_total" class="form-label">Total Harga</label>
+                                    <input type="number" class="form-control @error('sub_total') is-invalid @enderror" id="sub_total" onkeyup="sum();" 
+                                        name="sub_total" value="{{ old('sub_total') }}" required readonly>
+                                    @error('sub_total')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
@@ -110,38 +130,51 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title"><b>Data Suplaier Masuk</b></h3>
+                    <h3 class="card-title"><b>Data Suplaier</b></h3>
                 </div>
                 <div class="card-body table-responsive p-0" style="height: 300px;">
                     <table class="table table-head-fixed text-nowrap">
                         <thead>
                             <tr>
+                                <th>PLU</th>
+                                <th>Nama Barang</th>
+                                <th>Barcode</th>
+                                <th>Stok</th>
+                                <th>Harga Satuan</th>
+                                <th>Total Harga</th>
+                                <th>Rak</th>
                                 <th>Nama Suplaier</th>
-                                <th>Kode Suplaier</th>
-                                <th>Alamat Suplaier</th>
-                                <th>No Tlp</th>
-                                <th>Tanggal Suplaier Masuk</th>
-
+                                <th>No Telp</th>
+                                <th>Alamat</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($suplaiers as $suplaier)
+                            @foreach ($post as $data)
                                 <tr>
-                                    <td>{{ $suplaier->name }}</td>
-                                    <td>{{ $suplaier->kode_po }}</td>
-                                    <td>{{ $suplaier->alamat }}</td>
-                                    <td>{{ $suplaier->no_telp }}</td>
-                                    <td>{{ $suplaier->created_at }}</td>
-                                </tr>
+                                    <td>{{ $data->plu }}</td>
+                                    <td>{{ $data->nama_barang }}</td>
+                                    <td>{{ $data->barcode }}</td>
+                                    <td>{{ $data->stok }}</td>
+                                    <td>{{ number_format($data->harga_satuan, 0,',', '.') }}</td>
+                                    <td>{{ number_format($data->sub_total, 0,',', '.') }}</td>
+                                    <td>{{ $data->rak->name }}</td>
+                                    <td>{{ $data->suplaier->name }}</td>
+                                    <td>{{ $data->suplaier->no_telp }}</td>
+                                    <td>{{ $data->suplaier->alamat }}</td>
                             @endforeach
                         </tbody>
                         <tfoot>
                             <tr>
+                                <th>PLU</th>
+                                <th>Nama Barang</th>
+                                <th>Barcode</th>
+                                <th>Stok</th>
+                                <th>Harga Satuan</th>
+                                <th>Total Harga</th>
+                                <th>Rak</th>
                                 <th>Nama Suplaier</th>
-                                <th>Kode Suplaier</th>
-                                <th>Alamat Suplaier</th>
-                                <th>no telpon</th>
-                                <th>Tanggal Suplaier Masuk</th>
+                                <th>No Telp</th>
+                                <th>Alamat</th>
                             </tr>
                         </tfoot>
                     </table>
@@ -149,4 +182,14 @@
             </div>
         </div>
     </div>
+    <script>
+        function sum() {
+            var txtFirstNumberValue = document.getElementById('stok').value;
+            var txtSecondNumberValue = document.getElementById('harga_satuan').value;
+            var result = parseInt(txtFirstNumberValue) * parseInt(txtSecondNumberValue);
+            if (!isNaN(result)) {
+                document.getElementById('sub_total').value=result;
+            }
+        }
+    </script>
 @endsection

@@ -30,7 +30,9 @@ class StoreTransaction extends FormRequest
             'nama_barang' => 'required',
             'barcode' => 'required|unique:posts',
             'rak_id' => 'required',
-            'stok' => 'required'
+            'stok' => 'required',
+            'harga_satuan' => 'required',
+            'sub_total' => 'max:255'
         ];
     }
 }
