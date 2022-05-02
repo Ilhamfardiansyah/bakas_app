@@ -20,4 +20,8 @@ class Post extends Model
     {
         return $this->belongsTo(Suplaier::class);
     }
+    public function detail()
+    {
+        return $this->belongsTo(Detail::class);
+    }
 }

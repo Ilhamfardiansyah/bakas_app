@@ -36,7 +36,9 @@
                                             </td>
                                             <td>{{ number_format($posts->harga_satuan, 0,',', '.') }}</td>
                                             <td> {{ $posts->stok }}</td>
-                                        </tr>
+                                            <td>{{ $posts->detail->name }}</td>
+                                            <td>{{ $posts->detail->size }}</td>                                      
+                                          </tr>
                                     @endforeach
                                 </tbody>
                                 <tfoot>

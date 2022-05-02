@@ -16,7 +16,8 @@ return new class extends Migration
         Schema::create('details', function (Blueprint $table) {
             $table->id();
             $table->char('name');
-        });
+            $table->timestamps();
+            });
     }
 
     /**
