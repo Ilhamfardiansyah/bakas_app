@@ -51,14 +51,11 @@
                                 </tfoot>
                             </table>
                             <script>
-                                $(function() {
-                                    $("#table_id").DataTable({
-                                        "responsive": true,
-                                        "lengthChange": false,
-                                        "autoWidth": false,
-                                        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-                                    }).buttons().container().appendTo('#table_id_wrapper .col-md-6:eq(0)');
-                                });
+                                 $(document).ready(function() {
+                                    $('#table_id').DataTable( {
+                                        "order": [[ 3, "desc" ]]
+                                    } );
+                                } );
                             </script>
                         </div>
                         <!-- /.card-body -->

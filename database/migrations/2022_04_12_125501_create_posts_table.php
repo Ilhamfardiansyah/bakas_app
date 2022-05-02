@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('rak_id');
             $table->foreignId('suplaier_id');
+            $table->foreignId('detail_id');
             $table->string('no_po');
             $table->string('plu');
             $table->text('nama_barang');

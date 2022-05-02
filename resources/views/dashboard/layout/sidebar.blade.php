@@ -70,9 +70,15 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="/dashboard/posts/edit" class="nav-link">
+                                <a href="/dashboard/edit" class="nav-link {{ Request::is('dashboard/edit') ? 'active' : '' }}">
                                     <i class="fa-solid fa-box-open"></i>
                                     <p>Update Stok</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/dashnoard/barcode" class="nav-link {{ Request::is('dashboard/barcode') ? 'active' : '' }}">
+                                    <i class="fa-solid fa-print"></i>
+                                    <p>Cetak Barcode</p>
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -85,7 +91,7 @@
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-solid fa-file-invoice"></i>
+                            <i class="nav-icon fas fa-solid fa-truck"></i>
                             <p>
                                 Suplaier
                                 <i class="right fas fa-angle-left"></i>

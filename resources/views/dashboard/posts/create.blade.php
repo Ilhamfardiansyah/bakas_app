@@ -75,7 +75,7 @@
                                         </div>
                                     @enderror
                                 </div>
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-2">
                                     <label for="rak_id" class="form-label @error('rak_id') is-invalid @enderror">Rak</label>
                                     <div class="form-group">
                                         <select class="form-control select2" name="rak_id" style="width: 100%;">
@@ -87,7 +87,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-2">
                                     <label for="stok" class="form-label">Stok</label>
                                     <input type="number" class="form-control @error('stok') is-invalid @enderror" id="stok" onkeyup="sum();"
                                         name="stok" value="{{ old('stok') }}" required>
@@ -107,6 +107,18 @@
                                         </div>
                                     @enderror
                                 </div>
+                                <div class="form-group col-md-2">
+                                    <label for="detail_id" class="form-label @error('detail_id') is-invalid @enderror">Detail</label>
+                                    <div class="form-group">
+                                        <select class="form-control select2" name="detail_id" style="width: 100%;">
+                                            <option selected="selected">Detail</option>
+                                            @foreach ($details as $detail)
+                                                <option value="{{ $detail->id }}">
+                                                    {{ $detail->detail }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
                                 <div class="form-group col-md-4">
                                     <label for="sub_total" class="form-label">Total Harga</label>
                                     <input type="number" class="form-control @error('sub_total') is-invalid @enderror" id="sub_total" onkeyup="sum();" 
@@ -118,8 +130,10 @@
                                     @enderror
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-danger">Tambah Barang</button>
+                            <button type="submit" class="btn btn-success"><i class="fa-solid fa-plus"></i> Tambah Barang</button>
                         </form>
+                            <button onclick="addform('produk.store')" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Kategori</button>
+                            <button type="submit" class="btn btn-info">Size</button>
                     </div>
                 </div>
                 <!-- /.card-body -->
@@ -192,4 +206,35 @@
             }
         }
     </script>
+  <!-- Modal -->
+  <form action="/dashboard/" method="post">
+    @csrf
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+                <label for="plu" class="form-label">Input Kategori</label>
+                <input type="text" class="form-control @error('plu') is-invalid @enderror" id="plu"
+                    name="plu" value="{{ old('plu') }}" required autofocus>
+                @error('plu')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+</form>
 @endsection

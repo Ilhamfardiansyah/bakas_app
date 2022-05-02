@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Models\Rak;
 use App\Models\Suplaier;
+use App\Models\Detail;
 use Illuminate\Http\Request;
 use Alert;
 use Illuminate\Support\Facades\Auth;
@@ -38,7 +39,8 @@ class DashboardPostController extends Controller
         return view('dashboard.posts.create', [
             'post' => Post::all(),
             'raks' => Rak::all(),
-            'suplaiers' => Suplaier::all()
+            'suplaiers' => Suplaier::all(),
+            'details' => Detail::all()
         ]);
     }
        /**
@@ -58,16 +60,6 @@ class DashboardPostController extends Controller
         }catch(\Throwable $e){
             dd($e->getMessage());
         }
-        
-
-        // $validator = validator()->make(request()->all(), [
-        //     'type' => 'required|integer'
-        // ]);
-        
-        // if ($validator->fails()) {
-        //     redirect()->back()->with('eror' ,['SALAH!!']);
-        // }
-
     }
 
     /**
@@ -89,7 +81,7 @@ class DashboardPostController extends Controller
      */
     public function edit(Post $post)
     {
-        return view('dashboard.posts.edit');
+        //
     }
 
     /**
