@@ -6,6 +6,7 @@ use App\Models\Post;
 use App\Models\Rak;
 use App\Models\Suplaier;
 use App\Models\Detail;
+use App\Models\Size;
 use Illuminate\Http\Request;
 use Alert;
 use Illuminate\Support\Facades\Auth;
@@ -40,7 +41,8 @@ class DashboardPostController extends Controller
             'post' => Post::all(),
             'raks' => Rak::all(),
             'suplaiers' => Suplaier::all(),
-            'details' => Detail::all()
+            'details' => Detail::all(),
+            'size' => Size::all()
         ]);
     }
        /**

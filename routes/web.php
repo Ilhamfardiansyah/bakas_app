@@ -9,6 +9,7 @@ use App\Http\Controllers\DashboardPostController;
 use App\Http\Controllers\SuplaierController;
 use App\Http\Controllers\EditController;
 use App\Http\Controllers\DetailController;
+use App\Http\Controllers\SizeController;
 use App\Models\Rak;
 use App\Models\Suplaier;
 use App\Models\Detail;
@@ -66,5 +67,5 @@ Route::get('/scan/{barcode}', [DashboardPostController::class, 'scan']);
 Route::get('/dashboard/edit', [EditController::class, 'edit']);
 
 Route::get('/dashboard/detail/index', [DetailController::class, 'index']);
-
 Route::post('/dashboard/detail', [DetailController::class, 'store'])->name('detail');
+Route::post('/dashboard/size', [SizeController::class, 'store'])->name('size');

@@ -11,11 +11,11 @@ class DetailController extends Controller
     {
         $validateData = $request->validate([
             'name' => 'required|unique:details',
-            'size' => 'required|unique:details'
         ]);
 
         Detail::create($validateData);
          toast('Data Berhasil Ditambahkan','success');
         return redirect('dashboard/posts/create');
     }
-}
+
+        }

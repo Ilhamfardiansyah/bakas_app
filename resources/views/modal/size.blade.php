@@ -1,8 +1,8 @@
  <!-- Modal -->
- <form action="{{ route('detail') }}" method="post">
+ <form action="{{ route('size')}}" method="post">
     @csrf
     @include('sweetalert::alert')
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="exampleSize" tabindex="-1" role="dialog" aria-labelledby="exampleModalSize" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -13,7 +13,7 @@
         </div>
         <div class="modal-body">
             <div class="form-group">
-                <label for="name" class="form-label">Input Kategori</label>
+                <label for="name" class="form-label">Input Size</label>
                 <input type="text" class="form-control @error('name') is-invalid @enderror" id="name"
                     name="name" value="{{ old('name') }}" required autofocus>
                 @error('name')

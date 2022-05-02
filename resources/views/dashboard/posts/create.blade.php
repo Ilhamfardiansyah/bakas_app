@@ -124,9 +124,9 @@
                                     <div class="form-group">
                                         <select class="form-control select2" name="detail_id" style="width: 100%;">
                                             <option selected="selected">Size</option>
-                                            @foreach ($details as $detail)
-                                                <option value="{{ $detail->id }}">
-                                                    {{ $detail->size }}</option>
+                                            @foreach ($size as $sizes)
+                                                <option value="{{ $sizes->id }}">
+                                                    {{ $sizes->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -144,9 +144,9 @@
                             </div>
                             <button type="submit" class="btn btn-success"><i class="fa-solid fa-plus"></i> Tambah Barang</button>
                             <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Kategori</button>
-                            <button type="submit" class="btn btn-info">Size</button>
+                            <button class="btn btn-info" data-toggle="modal" data-target="#exampleSize">Size</button>
                         </form>
-                           
+@include('modal.size')
                     </div>
                 </div>
                 <!-- /.card-body -->
