@@ -23,6 +23,8 @@
                                         <th>Rak</th>
                                         <th>Harga Satuan</th>
                                         <th>Stok</th>
+                                        <th>Kategori</th>
+                                        <th>Size</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -37,7 +39,7 @@
                                             <td>{{ number_format($posts->harga_satuan, 0,',', '.') }}</td>
                                             <td> {{ $posts->stok }}</td>
                                             <td>{{ $posts->detail->name }}</td>
-                                            <td>{{ $posts->detail->size }}</td>                                      
+                                            <td>{{ $posts->size->name}}</td>                                          
                                           </tr>
                                     @endforeach
                                 </tbody>
@@ -49,6 +51,8 @@
                                         <th>Rak</th>
                                         <th>Harga Satuan</th>
                                         <th>Stok</th>
+                                        <th>Kategori</th>
+                                        <th>Size</th>
                                     </tr>
                                 </tfoot>
                             </table>

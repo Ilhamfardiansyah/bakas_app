@@ -33,7 +33,8 @@ class StoreTransaction extends FormRequest
             'stok' => 'required',
             'harga_satuan' => 'required',
             'detail_id' => 'required',
-            'sub_total' => 'max:255'
+            'sub_total' => 'max:255',
+            'size_id' => 'required'
         ];
     }
 }

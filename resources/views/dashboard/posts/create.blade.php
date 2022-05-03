@@ -120,9 +120,9 @@
                                     </div>
                                 </div>
                                 <div class="form-group col-md-2">
-                                    <label for="detail_id" class="form-label @error('detail_id') is-invalid @enderror">Size</label>
+                                    <label for="size_id" class="form-label @error('size_id') is-invalid @enderror">Size</label>
                                     <div class="form-group">
-                                        <select class="form-control select2" name="detail_id" style="width: 100%;">
+                                        <select class="form-control select2" name="size_id" style="width: 100%;">
                                             <option selected="selected">Size</option>
                                             @foreach ($size as $sizes)
                                                 <option value="{{ $sizes->id }}">

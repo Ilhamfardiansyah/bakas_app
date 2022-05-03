@@ -24,4 +24,8 @@ class Post extends Model
     {
         return $this->belongsTo(Detail::class);
     }
+    public function size()
+    {
+        return $this->belongsTo(Size::class);
+    }
 }

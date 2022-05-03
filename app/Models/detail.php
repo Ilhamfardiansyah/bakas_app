@@ -15,8 +15,4 @@ class detail extends Model
     {
         return $this->hasMany(Post::class);
     }
-    public function size()
-    {
-        return $this->belongsTo(Size::class);
     }
-}

@@ -2,7 +2,7 @@
  <form action="{{ route('size')}}" method="post">
     @csrf
     @include('sweetalert::alert')
-  <div class="modal fade" id="exampleSize" tabindex="-1" role="dialog" aria-labelledby="exampleModalSize" aria-hidden="true">
+  <div class="modal fade" id="exampleSize" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -13,10 +13,10 @@
         </div>
         <div class="modal-body">
             <div class="form-group">
-                <label for="name" class="form-label">Input Size</label>
-                <input type="text" class="form-control @error('name') is-invalid @enderror" id="name"
-                    name="name" value="{{ old('name') }}" required autofocus>
-                @error('name')
+                <label for="size_id" class="form-label">Input Size</label>
+                <input type="text" class="form-control @error('size_id') is-invalid @enderror" id="size_id"
+                    name="size_id" value="{{ old('size_id') }}" required autofocus>
+                @error('size_id')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>

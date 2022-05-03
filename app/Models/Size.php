@@ -13,6 +13,6 @@ class Size extends Model
 
     public function posts()
     {
-        return $this->hasMany(Detail::class);
+        return $this->hasMany(Post::class);
     }
 }

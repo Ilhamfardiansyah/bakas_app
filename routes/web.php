@@ -13,6 +13,7 @@ use App\Http\Controllers\SizeController;
 use App\Models\Rak;
 use App\Models\Suplaier;
 use App\Models\Detail;
+use App\Models\Size;
 use App\Http\Controllers\ReturController;
 
 
