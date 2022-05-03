@@ -17,6 +17,7 @@
                             <table id="table_id" class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
+                                        <th><input type="checkbox" id="checkall"></th>
                                         <th>PLU</th>
                                         <th>Nama Barang</th>
                                         <th>Barcode</th>
@@ -30,6 +31,7 @@
                                 <tbody>
                                     @foreach ($post as $posts)
                                         <tr>
+                                            <td><input type="checkbox" class="checkitem" value="{{ $posts["id"] }}"></td>
                                             <td>{{ $posts->plu }}</td>
                                             <td>{{ $posts->nama_barang }}</td>
                                             <td>{{ $posts->barcode }}</td>
@@ -61,6 +63,9 @@
                                     $('#table_id').DataTable( {
                                         "order": [[ 3, "desc" ]]
                                     } );
+                                    $('checkall').change(function(){
+                                        $('.checkitem').prop("checked", $(this).prop("checked"))
+                                    });
                                 } );
                             </script>
                         </div>

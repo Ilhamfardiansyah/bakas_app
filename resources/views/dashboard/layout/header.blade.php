@@ -1,4 +1,4 @@
-<nav class="main-header navbar navbar-expand-lg navbar-danger navbar-dark">
+<nav class="main-header navbar navbar-expand navbar-danger navbar-dark">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
         <li class="nav-item">

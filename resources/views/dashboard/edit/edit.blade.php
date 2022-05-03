@@ -1,7 +1,7 @@
 @extends('dashboard.layout.main')
 
 @section('container')
-<form action="post" action="/dashboard/edit">
+<form action="post" action="/dashboard/post/edit">
     <div class="form-group col-md-4">
         <label for="barcode" class="form-label">barcode</label>
         <input type="number" class="form-control @error('barcode') is-invalid @enderror"
@@ -12,6 +12,7 @@
             </div>
         @enderror
     </div>
+    <button class="submit"></button>
     <div class="row">
         <div class="col-12">
             <div class="card">
@@ -35,19 +36,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($post as $data)
-                                <tr>
-                                    <td>{{ $data->plu }}</td>
-                                    <td>{{ $data->nama_barang }}</td>
-                                    <td>{{ $data->barcode }}</td>
-                                    <td>{{ $data->stok }}</td>
-                                    <td>{{ number_format($data->harga_satuan, 0,',', '.') }}</td>
-                                    <td>{{ number_format($data->sub_total, 0,',', '.') }}</td>
-                                    <td>{{ $data->rak->name }}</td>
-                                    <td>{{ $data->suplaier->name }}</td>
-                                    <td>{{ $data->suplaier->no_telp }}</td>
-                                    <td>{{ $data->suplaier->alamat }}</td>
-                            @endforeach
+                            <th>
+                                <td></td>
+                            </th>
                         </tbody>
                         <tfoot>
                             <tr>

@@ -50,6 +50,7 @@ Route::resource('/dashboard/suplaier', SuplaierController::class)->middleware('a
 Route::resource('/dashboard/retur', ReturController::class)->middleware('auth');
 Route::get('/scan/{barcode}', [DashboardPostController::class, 'scan']);
 Route::get('/dashboard/edit', [EditController::class, 'edit']);
+Route::post('/dashboard/{barcode}/edit', [EditController::class, 'update']);
 Route::get('/dashboard/detail/index', [DetailController::class, 'index']);
 Route::post('/dashboard/detail', [DetailController::class, 'store'])->name('detail');
 Route::post('/dashboard/size', [SizeController::class, 'store'])->name('size');

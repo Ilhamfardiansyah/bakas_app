@@ -13,4 +13,10 @@ class EditController extends Controller
             'post' => $post
         ]);
     }
+
+    public function update($barcode)
+    {
+        $data = DB::table('posts')->where('barcode' , $barcode)->first();
+        dd($barcode);
+    }
 }
