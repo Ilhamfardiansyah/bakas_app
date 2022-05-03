@@ -107,6 +107,15 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="nav-header">Input Rak</li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Request::is('dashboard') ? 'active' : '' }}" href="/dashboard/rak/index">
+                            <i class="nav-icon fas fa-solid fa-pallet"></i>
+                            <p>
+                                Input Data Rak
+                            </p>
+                        </a>
+                    </li> 
                     <li class="nav-header">Stok Opname</li>
                     <li class="nav-item">
                         <a href="" class="nav-link">

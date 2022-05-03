@@ -13,6 +13,7 @@ class SizeController extends Controller
         ]);
 
         Size::create($validateData);
+        toast('Data Berhasil Ditambahkan','success');
         return redirect('dashboard/posts/create');
     }
 }

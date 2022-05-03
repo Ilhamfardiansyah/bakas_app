@@ -13,10 +13,10 @@
         </div>
         <div class="modal-body">
             <div class="form-group">
-                <label for="size_id" class="form-label">Input Size</label>
-                <input type="text" class="form-control @error('size_id') is-invalid @enderror" id="size_id"
-                    name="size_id" value="{{ old('size_id') }}" required autofocus>
-                @error('size_id')
+                <label for="name" class="form-label">Input Size</label>
+                <input type="text" class="form-control @error('name') is-invalid @enderror" id="name"
+                    name="name" value="{{ old('name') }}" required autofocus>
+                @error('name')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
