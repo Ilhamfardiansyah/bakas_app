@@ -109,7 +109,7 @@
                     </li>
                     <li class="nav-header">Input Rak</li>
                     <li class="nav-item">
-                        <a class="nav-link {{ Request::is('dashboard/rak/index') ? 'active' : '' }}" href="/dashboard/rak/index">
+                        <a class="nav-link {{ Request::is('dashboard/rak') ? 'active' : '' }}" href="/dashboard/rak">
                             <i class="nav-icon fas fa-solid fa-pallet"></i>
                             <p>
                                 Input Data Rak

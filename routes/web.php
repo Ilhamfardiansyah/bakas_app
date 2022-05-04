@@ -54,4 +54,5 @@ Route::post('/dashboard/{barcode}/edit', [EditController::class, 'update']);
 Route::get('/dashboard/detail/index', [DetailController::class, 'index']);
 Route::post('/dashboard/detail', [DetailController::class, 'store'])->name('detail');
 Route::post('/dashboard/size', [SizeController::class, 'store'])->name('size');
-Route::get('/dashboard/rak/index', [RakController::class, 'index']);
+Route::get('/dashboard/rak', [RakController::class, 'create']);
+Route::post('/dashboard/rak', [RakController::class, 'store']);
