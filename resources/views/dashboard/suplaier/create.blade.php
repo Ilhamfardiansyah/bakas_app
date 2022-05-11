@@ -53,16 +53,16 @@
                                             </div>
                                         @enderror
                                     </div>
-                                    <div class="mb-3">
+                                    {{-- <div class="mb-3">
                                         <label for="kode_po" class="form-label">Kode PO Suplaier</label>
                                         <input type="text" class="form-control @error('kode_po') is-invalid @enderror"
-                                            id="kode_po" name="kode_po" value="{{ old('kode_po') }}" required>
+                                            id="kode_po" name="kode_po" value="{{ old('kode_po') }}">
                                         @error('kode_po')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
                                             </div>
                                         @enderror
-                                    </div>
+                                    </div> --}}
                                     <button type="submit" class="btn btn-primary">Tambah Barang</button>
                                 </form>
                             </div>

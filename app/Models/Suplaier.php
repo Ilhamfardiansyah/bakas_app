@@ -9,7 +9,8 @@ class Suplaier extends Model
 {
     use HasFactory;
 
-    protected $guarded = ['id'];
+    protected $table  = 'suplaiers';
+    protected $guarded  = [];
 
     public function posts()
     {

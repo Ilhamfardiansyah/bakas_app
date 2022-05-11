@@ -9,7 +9,7 @@ use DB;
 class EditController extends Controller
 {
     public function edit(Post $post){
-        return view('dashboard.edit.edit', [
+        return view('dashboard.edit.index', [
             'post' => $post
         ]);
     }
@@ -19,4 +19,11 @@ class EditController extends Controller
         $data = DB::table('posts')->where('barcode' , $barcode)->first();
         dd($barcode);
     }
+
+    public function cari($barcode)
+    {
+       
+        $data = DB::table('posts')->where('barcode' , $barcode)->first();
+       return view('dashboard.edit.result', compact('data'));
+            }
 }

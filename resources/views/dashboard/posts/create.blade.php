@@ -26,6 +26,10 @@
                             @csrf
                             <div class="form-row">
                                 <div class="form-group col-md-4">
+                                    <label for="no_po" id="no_po" class="form-label">No Invoice</label>
+                                    <input type="text" name="no_po" class="form-control " value="{{ $invoice }}" readonly>
+                                </div>
+                                <div class="form-group col-md-4">
                                     <label for="suplaier_id" class="form-label">No Invoice</label>
                                     <select class="form-control select2" name="suplaier_id" style="width: 100%;">
                                         <option selected="selected">Kode Suplaier</option>
@@ -34,16 +38,6 @@
                                                 {{ $suplaier->name }}</option>
                                         @endforeach
                                     </select>
-                                </div>
-                                <div class="form-group col-md-4">
-                                    <label for="no_po" class="form-label">Nomer PO</label>
-                                    <input type="number" class="form-control @error('no_po') is-invalid @enderror"
-                                        id="no_po" name="no_po" value="{{ old('no_po') }}" required autofocus>
-                                    @error('no_po')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="plu" class="form-label">PLU</label>

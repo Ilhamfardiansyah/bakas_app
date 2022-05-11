@@ -35,11 +35,15 @@ class DashboardPostController extends Controller
      */
     public function create()
        {
+
+        $invoice = date('d-M-Y'). '-'. uniqid();
+
         return view('dashboard.posts.create', [
             'post' => Post::with(['rak', 'suplaier', 'size', 'detail'])->get(),
             'raks' => Rak::all(),
             'suplaiers' => Suplaier::all(),
             'details' => Detail::all(),
+            'invoice' => $invoice,
             'size' => Size::all()
         ]);
     }
@@ -49,18 +53,30 @@ class DashboardPostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreTransaction $request)
+    public function store(Request $request)
     {
+        // dd($request->all());
+         $validateData = $request->validate([
+            'suplaier_id' => 'required',
+            'no_po' => 'required',
+            'plu' => 'required|unique:posts', 
+            'nama_barang' => 'required',
+            'barcode' => 'required|unique:posts',
+            'rak_id' => 'required',
+            'stok' => 'required',
+            'harga_satuan' => 'required',
+            'detail_id' => 'required',
+            'sub_total' => 'max:255',
+            'size_id' => 'required'
+            // 'kode_po' => 'required'
+        ]);
 
-        try{
+        // try{
   
-        Post::create($request->validated());
+        Post::create($validateData);
         toast('Produk Berhasil Ditambahkan','success');
         return redirect('/dashboard/posts');
-        }catch(\Throwable $e){
-            dd($e->getMessage());
-        }
-    }
+           }
 
     /**
      * Display the specified resource.

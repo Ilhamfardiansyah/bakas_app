@@ -13,14 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('suplaiers', function (Blueprint $table) {
-            $table->id();
-            $table->string('name', 100);
-            $table->string('alamat', 255);
-            $table->string('no_telp', 13);
-            $table->string('kode_po', 15)->unique();
-            $table->timestamps();
-        });
+        //
     }
 
     /**
@@ -30,6 +23,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('suplaiers');
+        //
     }
 };

@@ -36,14 +36,23 @@ class SuplaierController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
         $validateData = $request->validate([
             'name' => 'required',
             'alamat' => 'required',
             'no_telp' => 'required',
-            'kode_po' => 'required'
+            // 'kode_po' => 'required'
         ]);
 
-        Suplaier::create($validateData);
+        $last=Suplaier::count();
+        $kode_po='PO00'. $last.'-'. date('d-Y'). '-'. uniqid();
+
+        Suplaier::create([
+               'name' => $request->name,
+               'alamat' => $request->alamat,
+               'no_telp' => $request->no_telp,
+               'kode_po' => $kode_po    
+        ]);
         toast('Data Suplaier Berhasil Ditambahkan','success');
         return redirect('/dashboard/suplaier/create');
     }
