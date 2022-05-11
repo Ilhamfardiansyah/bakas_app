@@ -26,10 +26,8 @@ class RakController extends Controller
     public function store(Request $request)
     {   
         $validateData = $request->validate([
-            'name' => 'required|unique:raks',
-            'type' => 'required|unique:raks',
-            'posisi' => 'required|unique:raks'
-        ]);
+            'name' => 'required|unique:raks'
+                    ]);
 
         Rak::create($validateData);
          toast('Data Berhasil Ditambahkan','success');

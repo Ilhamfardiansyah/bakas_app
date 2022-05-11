@@ -87,19 +87,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="form-group col-md-2">
-                                    <label for="rak_id" class="form-label @error('rak_id') is-invalid @enderror">Rak</label>
-                                    <div class="form-group">
-                                        <select class="form-control select2" name="rak_id" style="width: 100%;">
-                                            <option selected="selected">Pilih Rak</option>
-                                            @foreach ($raks as $rak)
-                                                <option value="{{ $rak->id }}">
-                                                    {{ $rak->type}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group col-md-2">
+                                                            <div class="form-group col-md-2">
                                     <label for="stok" class="form-label">Stok</label>
                                     <input type="number" class="form-control @error('stok') is-invalid @enderror" id="stok" onkeyup="sum();"
                                         name="stok" value="{{ old('stok') }}" required>

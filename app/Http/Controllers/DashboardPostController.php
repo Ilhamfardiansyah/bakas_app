@@ -24,10 +24,10 @@ class DashboardPostController extends Controller
     {
         
         return view('dashboard.posts.index', [
-            'post' => Post::all(),
-            'rak' => Rak::all(),
-            'suplaier' => Suplaier::all(),
-            'sizes' => Size::all()
+            'post' => Post::with(['rak', 'suplaier', 'size', 'detail'])->get()
+            // 'rak' => Rak::all(),
+            // 'suplaier' => Suplaier::all(),
+            // 'sizes' => Size::all()
         ]);
     }
 

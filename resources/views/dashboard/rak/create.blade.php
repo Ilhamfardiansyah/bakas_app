@@ -33,27 +33,7 @@
                                         </div>
                                     @enderror
                                 </div>
-                                <div class="mb-3">
-                                    <label for="type" class="form-label">Type Rak</label>
-                                    <input type="text" class="form-control @error('type') is-invalid @enderror"
-                                        id="type" name="type" value="{{ old('type') }}" required autofocus>
-                                    @error('type')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
-                                <div class="mb-3">
-                                    <label for="posisi" class="form-label">Posisi Rak</label>
-                                    <input posisi="text" class="form-control @error('posisi') is-invalid @enderror"
-                                        id="posisi" name="posisi" value="{{ old('posisi') }}" required autofocus>
-                                    @error('posisi')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
-                            <button type="submit" class="btn btn-primary">Tambah Barang</button>
+                                                           <button type="submit" class="btn btn-primary">Tambah Barang</button>
                             </form>
                         </div>
                     </div>
@@ -81,9 +61,7 @@
                         @foreach ($rak as $raks)
                             <tr>
                                 <td>{{ $raks->name }}</td>
-                                <td>{{ $raks->type }}</td>
-                                <td>{{ $raks->posisi }}</td>
-                            </tr>
+                                                           </tr>
                         @endforeach
                     </tbody>
                     <tfoot>
