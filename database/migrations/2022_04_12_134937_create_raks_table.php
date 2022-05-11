@@ -16,8 +16,6 @@ return new class extends Migration
         Schema::create('raks', function (Blueprint $table) {
             $table->id();
             $table->char('name')->unique();
-            $table->char('type')->unique();
-            $table->char('posisi')->unique();
             $table->timestamps();
         });
     }
