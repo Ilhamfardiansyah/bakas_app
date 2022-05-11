@@ -87,7 +87,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                                            <div class="form-group col-md-2">
+                                <div class="form-group col-md-2">
                                     <label for="stok" class="form-label">Stok</label>
                                     <input type="number" class="form-control @error('stok') is-invalid @enderror" id="stok" onkeyup="sum();"
                                         name="stok" value="{{ old('stok') }}" required>
@@ -97,7 +97,7 @@
                                         </div>
                                     @enderror
                                 </div>
-                                <div class="form-group col-md-4">
+                                <div class="form-group col-md-3">
                                     <label for="harga_satuan" class="form-label">Harga Satuan</label>
                                     <input type="number" class="form-control @error('harga_satuan') is-invalid @enderror" id="harga_satuan" onkeyup="sum();" 
                                         name="harga_satuan" value="{{ old('harga_satuan') }}" required>
@@ -118,6 +118,7 @@
                                             @endforeach
                                         </select>
                                     </div>
+                                    <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Tambah Kategori</button>
                                 </div>
                                 <div class="form-group col-md-2">
                                     <label for="size_id" class="form-label @error('size_id') is-invalid @enderror">Size</label>
@@ -130,6 +131,7 @@
                                             @endforeach
                                         </select>
                                     </div>
+                                    <button class="btn btn-info" data-toggle="modal" data-target="#exampleSize">Tambah Size</button>
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="sub_total" class="form-label">Total Harga</label>
@@ -143,8 +145,6 @@
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-success"><i class="fa-solid fa-plus"></i> Tambah Barang</button>
-                            <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Kategori</button>
-                            <button class="btn btn-info" data-toggle="modal" data-target="#exampleSize">Size</button>
                         </form>
 @include('modal.size')
                     </div>
@@ -153,7 +153,7 @@
             </div>
             <!-- /.card -->
     </section>
-    <div class="row">
+        <div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
@@ -173,6 +173,7 @@
                                 <th>Nama Suplaier</th>
                                 <th>No Telp</th>
                                 <th>Alamat</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -188,6 +189,7 @@
                                     <td>{{ $data->suplaier->name }}</td>
                                     <td>{{ $data->suplaier->no_telp }}</td>
                                     <td>{{ $data->suplaier->alamat }}</td>
+                                    <td><button class="btn btn-success">Edit</button> | <button class="btn btn-danger">Delete</button></td>
                             @endforeach
                         </tbody>
                         <tfoot>
@@ -202,6 +204,7 @@
                                 <th>Nama Suplaier</th>
                                 <th>No Telp</th>
                                 <th>Alamat</th>
+                                <th>Action</th>
                             </tr>
                         </tfoot>
                     </table>

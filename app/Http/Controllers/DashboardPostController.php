@@ -25,9 +25,6 @@ class DashboardPostController extends Controller
         
         return view('dashboard.posts.index', [
             'post' => Post::with(['rak', 'suplaier', 'size', 'detail'])->get()
-            // 'rak' => Rak::all(),
-            // 'suplaier' => Suplaier::all(),
-            // 'sizes' => Size::all()
         ]);
     }
 
@@ -39,7 +36,7 @@ class DashboardPostController extends Controller
     public function create()
        {
         return view('dashboard.posts.create', [
-            'post' => Post::all(),
+            'post' => Post::with(['rak', 'suplaier', 'size', 'detail'])->get(),
             'raks' => Rak::all(),
             'suplaiers' => Suplaier::all(),
             'details' => Detail::all(),
