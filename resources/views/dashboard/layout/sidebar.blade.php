@@ -70,7 +70,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="/dashboard/edit/index" class="nav-link {{ Request::is('dashboard/edit/index') ? 'active' : '' }}">
+                                <a href="/dashboard/edit" class="nav-link {{ Request::is('dashboard/edit/index') ? 'active' : '' }}">
                                     <i class="fa-solid fa-box-open"></i>
                                     <p>Update Stok</p>
                                 </a>

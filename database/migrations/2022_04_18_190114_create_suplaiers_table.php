@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name', 100);
             $table->string('alamat', 255);
             $table->string('no_telp', 13);
-            $table->string('kode_po', 15)->unique();
+            $table->string('kode_po')->unique();
             $table->timestamps();
         });
     }
