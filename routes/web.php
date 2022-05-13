@@ -40,6 +40,7 @@ Route::get('/dashboard', function(){
 })->middleware('auth');
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
 Route::post('/coba/post', [DashboardPostController::class,'store'])->name('coba.post')->middleware('auth');
+Route::get('/dashboard/posts/delete', [DashboardPostController::class,'destroy'])->middleware('auth');
 Route::get('/detail_rak/{rak:name}', function(Rak $rak){
     return view('dashboard.detail_rak', [
         'posts' => $rak->posts,
@@ -47,13 +48,15 @@ Route::get('/detail_rak/{rak:name}', function(Rak $rak){
     ]);
 })->middleware('auth');
 Route::resource('/dashboard/suplaier', SuplaierController::class)->middleware('auth');
-Route::resource('/dashboard/retur', ReturController::class)->middleware('auth');
 Route::get('/scan/{barcode}', [DashboardPostController::class, 'scan']);
 Route::get('/dashboard/edit', [EditController::class, 'edit']);
 Route::get('/dashboard/cari/{barcode}', [EditController::class, 'cari']);
-Route::post('/dashboard/{barcode}/edit', [EditController::class, 'update']);
+Route::post('/dashboard/cari/update', [EditController::class, 'update']);
 Route::get('/dashboard/detail/index', [DetailController::class, 'index']);
 Route::post('/dashboard/detail', [DetailController::class, 'store'])->name('detail');
 Route::post('/dashboard/size', [SizeController::class, 'store'])->name('size');
 Route::get('/dashboard/rak', [RakController::class, 'create']);
 Route::post('/dashboard/rak', [RakController::class, 'store']);
+Route::get('/dashboard/retur/index', [ReturController::class, 'index']);
+Route::post('/dashboard/retur/destroy', [ReturController::class, 'destroy']);
+Route::get('/dashboard/search/{barcode}', [ReturController::class, 'search']);

@@ -22,10 +22,9 @@ class DashboardPostController extends Controller
      */
     public function index()
     {
-        
-        return view('dashboard.posts.index', [
-            'post' => Post::with(['rak', 'suplaier', 'size', 'detail'])->get()
-        ]);
+        $post = Post::with(['rak', 'suplaier', 'size', 'detail'])->get();
+        return view('dashboard.posts.index', compact('post')
+        );
     }
 
     /**
@@ -37,15 +36,12 @@ class DashboardPostController extends Controller
        {
 
         $invoice = date('d-M-Y'). '-'. uniqid();
-
-        return view('dashboard.posts.create', [
-            'post' => Post::with(['rak', 'suplaier', 'size', 'detail'])->get(),
-            'raks' => Rak::all(),
-            'suplaiers' => Suplaier::all(),
-            'details' => Detail::all(),
-            'invoice' => $invoice,
-            'size' => Size::all()
-        ]);
+        $suplaier = Suplaier::all();
+        $rak = Rak::all();
+        $detail = Detail::all();
+        $size = Size::all();
+        $data = Post::with(['rak', 'suplaier', 'size', 'detail'])->get();
+        return view('dashboard.posts.create', compact('data', 'invoice' , 'suplaier', 'rak', 'detail', 'size'));
     }
        /**
      * Store a newly created resource in storage.
@@ -109,7 +105,17 @@ class DashboardPostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        {
+        $rules = [
+            'stok' => 'required'
+        ];
+
+        $validateData = $request->validate($rules);
+
+        Post::where('id', $post->id)
+            ->update($validateData);
+            return redirect('dashboard.edit.result', compact('data'));
+    }
     }
 
     /**
@@ -118,10 +124,15 @@ class DashboardPostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
+    public function destroy($validateData)
     {
-        //
+        $post = DB::table('posts');
+        dd($validateData);
+        Post::where('barcode', $post->barcode);
+        toast('Produk Berhasil Dihapus','success');
+        return redirect('/dashboard/posts');
     }
+
      public function scan($barcode)
     {
        $data =  DB::table('posts')->where('barcode', $barcode)->first();

@@ -56,7 +56,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="/dashboard/posts"
+                                <a href="{{ url('/dashboard/posts') }}"
                                     class="nav-link {{ Request::is('dashboard/posts') ? 'active' : '' }}">
                                     <i class="far fa-solid fa-boxes-stacked"></i>
                                     <p>Inventory</p>
@@ -70,7 +70,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="/dashboard/edit" class="nav-link {{ Request::is('dashboard/edit/index') ? 'active' : '' }}">
+                                <a href="/dashboard/edit" class="nav-link {{ Request::is('dashboard/edit') ? 'active' : '' }}">
                                     <i class="fa-solid fa-box-open"></i>
                                     <p>Update Stok</p>
                                 </a>
@@ -82,7 +82,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="/dashboard/retur" class="nav-link">
+                                <a href="/dashboard/retur/index" class="nav-link {{ Request::is('dashboard/retur/index') ? 'active' : '' }}">
                                     <i class="fa-solid fa-truck-ramp-box"></i>
                                     <p>Retur Barang</p>
                                 </a>

@@ -23,9 +23,8 @@ class SuplaierController extends Controller
      */
     public function create()
     {
-        return view('dashboard.suplaier.create', [
-            'suplaier' => Suplaier::all()
-        ]);
+        $data = Suplaier::all();
+        return view('dashboard.suplaier.create', compact('data'));
     }
 
     /**

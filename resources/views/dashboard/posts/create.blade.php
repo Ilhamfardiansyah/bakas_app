@@ -33,9 +33,9 @@
                                     <label for="suplaier_id" class="form-label">No Invoice</label>
                                     <select class="form-control select2" name="suplaier_id" style="width: 100%;">
                                         <option selected="selected">Kode Suplaier</option>
-                                        @foreach ($suplaiers as $suplaier)
-                                            <option value="{{ $suplaier->id }}">{{ $suplaier->kode_po }}
-                                                {{ $suplaier->name }}</option>
+                                        @foreach ($suplaier as $suplaiers)
+                                            <option value="{{ $suplaiers->id }}">{{ $suplaiers->kode_po }}
+                                                {{ $suplaiers->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -73,11 +73,11 @@
                                     <label for="rak_id" class="form-label @error('rak_id') is-invalid @enderror">Rak</label>
                                     <div class="form-group">
                                         <select class="form-control select2" name="rak_id" style="width: 100%;">
-                                            <option selected="selected">Pilih Rak</option>
-                                            @foreach ($raks as $rak)
-                                                <option value="{{ $rak->id }}">
-                                                    {{ $rak->name }}</option>
-                                            @endforeach
+                                           @foreach ($rak as $raks)
+                                           <option selected="selected">Pilih Rak</option>
+                                               <option value="{{ $raks->id }}">
+                                                   {{ $raks->name }}</option>
+                                           @endforeach
                                         </select>
                                     </div>
                                 </div>
@@ -106,9 +106,9 @@
                                     <div class="form-group">
                                         <select class="form-control select2" name="detail_id" style="width: 100%;">
                                             <option selected="selected">Detail</option>
-                                            @foreach ($details as $detail)
-                                                <option value="{{ $detail->id }}">
-                                                    {{ $detail->name }}</option>
+                                            @foreach ($detail as $details   )
+                                                <option value="{{ $details->id }}">
+                                                    {{ $details->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -171,18 +171,18 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($post as $data)
+                            @foreach ($data as $post)
                                 <tr>
-                                    <td>{{ $data->plu }}</td>
-                                    <td>{{ $data->nama_barang }}</td>
-                                    <td>{{ $data->barcode }}</td>
-                                    <td>{{ $data->stok }}</td>
-                                    <td>{{ number_format($data->harga_satuan, 0,',', '.') }}</td>
-                                    <td>{{ number_format($data->sub_total, 0,',', '.') }}</td>
-                                    <td>{{ $data->rak->name }}</td>
-                                    <td>{{ $data->suplaier->name }}</td>
-                                    <td>{{ $data->suplaier->no_telp }}</td>
-                                    <td>{{ $data->suplaier->alamat }}</td>
+                                    <td>{{ $post->plu }}</td>
+                                    <td>{{ $post->nama_barang }}</td>
+                                    <td>{{ $post->barcode }}</td>
+                                    <td>{{ $post->stok }}</td>
+                                    <td>{{ number_format($post->harga_satuan, 0,',', '.') }}</td>
+                                    <td>{{ number_format($post->sub_total, 0,',', '.') }}</td>
+                                    <td>{{ $post->rak->name }}</td>
+                                    <td>{{ $post->suplaier->name }}</td>
+                                    <td>{{ $post->suplaier->no_telp }}</td>
+                                    <td>{{ $post->suplaier->alamat }}</td>
                                     <td><button class="btn btn-success">Edit</button> | <button class="btn btn-danger">Delete</button></td>
                             @endforeach
                         </tbody>

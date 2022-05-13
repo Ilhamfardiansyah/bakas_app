@@ -5,25 +5,39 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Suplaier;
+use App\Models\Rak;
 use DB;
+use Alert;
+
 class EditController extends Controller
 {
     public function edit(Post $post){
-        return view('dashboard.edit.index', [
-            'post' => $post
-        ]);
+                $data = Post::with(['suplaier', 'rak']);
+        return view('dashboard.edit.index', compact('data'));
     }
 
-    public function update($barcode)
+    public function update(Request $request)
     {
-        $data = DB::table('posts')->where('barcode' , $barcode)->first();
-        dd($barcode);
+        // dd($request->all());
+        Post::where('barcode', $request->barcode)
+            ->update([
+                'stok' => $request->stok,
+                'sub_total' => $request->sub_total
+            ]);
+            return back();
+    
     }
 
     public function cari($barcode)
     {
-       
-        $data = DB::table('posts')->where('barcode' , $barcode)->first();
-       return view('dashboard.edit.result', compact('data'));
+        $data = Post::Where('barcode' , $barcode)->with(['suplaier', 'rak'])->first();
+        // dd($data);
+        if ($data==null) {
+            Alert::error('Gagal','Tidak Temukan');
+            return back();
+        }
+        else {
+    return view('dashboard.edit.result', compact('data'));
+                    }
             }
-}
+    }
