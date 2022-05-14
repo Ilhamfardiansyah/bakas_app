@@ -49,6 +49,8 @@ Route::get('/detail_rak/{rak:name}', function(Rak $rak){
 })->middleware('auth');
 Route::resource('/dashboard/suplaier/', SuplaierController::class)->middleware('auth');
 Route::get('/dashboard/delete/{id}/',[ SuplaierController::class, 'destroy'])->middleware('auth');
+Route::get('/dashboard/edit/{id}/',[ SuplaierController::class, 'edit'])->middleware('auth');
+Route::put('/dashboard/update/{data}',[ SuplaierController::class, 'update'])->middleware('auth');
 Route::get('/scan/{barcode}', [DashboardPostController::class, 'scan']);
 Route::get('/dashboard/edit', [EditController::class, 'edit']);
 Route::get('/dashboard/cari/{barcode}', [EditController::class, 'cari']);

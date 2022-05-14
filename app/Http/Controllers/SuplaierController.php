@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Suplaier;
 use App\Models\Post;
+use DB;
 class SuplaierController extends Controller
 {
     /**
@@ -76,7 +77,8 @@ class SuplaierController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Suplaier::where('id', $id)->first();
+        return view('dashboard.suplaier.index', compact('data'));
     }
 
     /**
@@ -88,7 +90,13 @@ class SuplaierController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+            Suplaier::where('id', $id)
+            ->update([
+                'name' => $request->name,
+                'alamat' => $request->alamat,
+                'no_telp' => $request->no_telp
+            ]);
+            return back();
     }
 
     /**

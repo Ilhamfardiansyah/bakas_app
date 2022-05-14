@@ -89,7 +89,7 @@
                             <td>{{ $suplaiers->no_telp }}</td>
                             <td>{{ $suplaiers->created_at }}</td>
                             <td>
-                                <a href="/dashboard/delete/{{ $suplaiers->id }}" class="btn btn-danger" onclick="return confirm('Yakin ingin hapus??')">Delete</a></td>
+                                <a href="/dashboard/delete/{{ $suplaiers->id }}" class="btn btn-danger" onclick="return confirm('Yakin ingin hapus??')">Delete</a> <a href="/dashboard/edit/{{ $suplaiers->id }}" class="btn btn-success">Edit</a></td>
                         </tr>
                         @endforeach
                     </tbody>
