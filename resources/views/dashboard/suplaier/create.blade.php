@@ -88,7 +88,8 @@
                             <td>{{ $suplaiers->alamat }}</td>
                             <td>{{ $suplaiers->no_telp }}</td>
                             <td>{{ $suplaiers->created_at }}</td>
-                            <td><a href="">Delete</a></td>
+                            <td>
+                                <a href="/dashboard/delete/{{ $suplaiers->id }}" class="btn btn-danger" onclick="return confirm('Yakin ingin hapus??')">Delete</a></td>
                         </tr>
                         @endforeach
                     </tbody>

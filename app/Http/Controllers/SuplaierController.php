@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Suplaier;
+use App\Models\Post;
 class SuplaierController extends Controller
 {
     /**
@@ -47,10 +48,10 @@ class SuplaierController extends Controller
         $kode_po='PO00'. $last.'-'. date('d-Y'). '-'. uniqid();
 
         Suplaier::create([
-               'name' => $request->name,
-               'alamat' => $request->alamat,
-               'no_telp' => $request->no_telp,
-               'kode_po' => $kode_po    
+        'name' => $request->name,
+        'alamat' => $request->alamat,
+        'no_telp' => $request->no_telp,
+        'kode_po' => $kode_po    
         ]);
         toast('Data Suplaier Berhasil Ditambahkan','success');
         return redirect('/dashboard/suplaier/create');
@@ -96,10 +97,10 @@ class SuplaierController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    // public function destroy($id)
-    // {
-    //     Post::destroy($id);
-    //     toast('Data Suplaier Berhasil Ditambahkan','success');
-    //     return redirect('/dashboard/suplaier/create');
-    // }
+    public function destroy($id)
+    {
+        Suplaier::Where('id', $id)->delete();
+        toast('Data Suplaier Berhasil Ditambahkan','success');
+        return redirect('/dashboard/suplaier/create');
+    }
 }
