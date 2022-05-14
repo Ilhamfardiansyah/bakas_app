@@ -88,7 +88,7 @@
                             <td>{{ $suplaiers->alamat }}</td>
                             <td>{{ $suplaiers->no_telp }}</td>
                             <td>{{ $suplaiers->created_at }}</td>
-                            <td><button class="btn btn-success">Edit</button> | <button class="btn btn-danger">Delete</button></td>
+                            <td><a href="">Delete</a></td>
                         </tr>
                         @endforeach
                     </tbody>

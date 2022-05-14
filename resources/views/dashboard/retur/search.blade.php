@@ -8,6 +8,9 @@
         <div class="card">
             <div class="card-header">
                 <div class="input-group mb-3">
+                    {{-- <form action="{{url('dashboard/destroy/'. $data->barcode)}}" action="post">
+                        @method('delete')
+                        @csrf // ini pake get aja am, jgn pake delete --}}
                     <label class="form-label">Barcode
                     <input class="form-control" id="barcode" name="barcode" value="{{ $data->barcode }}" required autofocus>
                     </label>
@@ -52,9 +55,9 @@
                         <label for="sub_total" class="form-label">Total Harga</label>
                         <input type="text" class="form-control" id="sub_total" onkeyup="sum();" name="sub_total"
                             value="{{ $data->sub_total }}" required readonly>
+                        </div>
+                            <a href="{{url('dashboard/destroy/'. $data->barcode)}}" class="btn btn-success">Hapus</a>
                     </div>
-                </div>
-                <a href="/dashboard/posts/delete/{barcode}" class="badge bg-success border-0">Retur</a>
             </div>
         </div>
     </div>

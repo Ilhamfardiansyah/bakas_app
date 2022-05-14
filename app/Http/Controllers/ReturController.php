@@ -21,10 +21,13 @@ class ReturController extends Controller
         return view('dashboard.retur.search', compact('data'));
     }
 
-    public function destroy(Post $post)
+    public function destroy($barcode)
     {
-        Post::destroy($post->id);
-        toast('Produk Berhasil Dihapus','success');
+        // dd($barcode);
+        // $post = Post::find($barcode);
+        // Post::destroy($post->barcode); // gak gini cuk
+        Post::Where('barcode', $barcode)->delete();  
+        toast('Produk Berhasil Hapus','success');
         return redirect('/dashboard/posts');
     }
 }

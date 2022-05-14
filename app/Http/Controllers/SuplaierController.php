@@ -96,8 +96,10 @@ class SuplaierController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
-    }
+    // public function destroy($id)
+    // {
+    //     Post::destroy($id);
+    //     toast('Data Suplaier Berhasil Ditambahkan','success');
+    //     return redirect('/dashboard/suplaier/create');
+    // }
 }

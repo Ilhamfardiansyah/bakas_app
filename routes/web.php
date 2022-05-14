@@ -40,7 +40,7 @@ Route::get('/dashboard', function(){
 })->middleware('auth');
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
 Route::post('/coba/post', [DashboardPostController::class,'store'])->name('coba.post')->middleware('auth');
-Route::get('/dashboard/posts/delete', [DashboardPostController::class,'destroy'])->middleware('auth');
+// Route::get('/dashboard/posts/{$id}', [DashboardPostController::class,'destroy'])->middleware('auth');
 Route::get('/detail_rak/{rak:name}', function(Rak $rak){
     return view('dashboard.detail_rak', [
         'posts' => $rak->posts,
@@ -58,5 +58,5 @@ Route::post('/dashboard/size', [SizeController::class, 'store'])->name('size');
 Route::get('/dashboard/rak', [RakController::class, 'create']);
 Route::post('/dashboard/rak', [RakController::class, 'store']);
 Route::get('/dashboard/retur/index', [ReturController::class, 'index']);
-Route::post('/dashboard/retur/destroy', [ReturController::class, 'destroy']);
 Route::get('/dashboard/search/{barcode}', [ReturController::class, 'search']);
+Route::get('/dashboard/destroy/{barcode}', [ReturController::class, 'destroy']);

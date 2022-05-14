@@ -124,13 +124,9 @@ class DashboardPostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy($validateData)
+    public function destroy($id)
     {
-        $post = DB::table('posts');
-        dd($validateData);
-        Post::where('barcode', $post->barcode);
-        toast('Produk Berhasil Dihapus','success');
-        return redirect('/dashboard/posts');
+        //
     }
 
      public function scan($barcode)
