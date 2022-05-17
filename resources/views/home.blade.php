@@ -2,16 +2,5 @@
 
 @section('container')
     @include('sweetalert::alert')
-    <h1>Selamat Datang</h1>
-    <div class="row">
-        <div class="col">
-            Column
-        </div>
-        <div class="col">
-            Column
-        </div>
-        <div class="col">
-            Column
-        </div>
-    </div>
+    <marquee bgcolor="red"><h1 font-family="Fantasy"><b>Selamat Datang</b></h1></marquee>
 @endsection

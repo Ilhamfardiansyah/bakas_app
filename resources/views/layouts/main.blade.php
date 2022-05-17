@@ -15,7 +15,7 @@
     <title>Bakas Store</title>
 </head>
 
-<body>
+<body background="{{ asset('img/wp.png') }}" background-size="100px">
     {{-- <div class="row-auto"> --}}
     @include('partials.navbar')
     <div class="container mt-4">
