@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Rak extends Model
+class DetailRak extends Model
 {
     use HasFactory;
 
@@ -13,11 +13,6 @@ class Rak extends Model
 
     public function posts()
     {
-        return $this->hasMany(Post::class);
-    }
-
-    public function DetailRak()
-    {
-        return $this->belongsTo(DetailRak::class);
+        return $$this->hasMany(Rak::class);
     }
 }

@@ -46,7 +46,7 @@ class SuplaierController extends Controller
         ]);
 
         $last=Suplaier::count();
-        $kode_po='PO00'. $last.'-'. date('d-Y'). '-'. uniqid();
+        $kode_po='PO0'. $last.'-'. date('DM-dYhis');
 
         Suplaier::create([
         'name' => $request->name,

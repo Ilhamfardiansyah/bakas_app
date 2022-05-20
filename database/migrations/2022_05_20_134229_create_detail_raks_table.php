@@ -13,10 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('raks', function (Blueprint $table) {
+        Schema::create('detail_raks', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('DetailRak_id');
-            $table->char('name')->unique();
+            $table->string('nama');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('raks');
+        Schema::dropIfExists('detail_raks');
     }
 };
