@@ -127,8 +127,8 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <form action="/dashboard/posts" method="GET">
-                                    <a href="#" class="nav-link">
+                                <form action="/dashboard/posts/" method="GET">
+                                    <a href="/dashboar/" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Rak 1</p>
                                     </a>

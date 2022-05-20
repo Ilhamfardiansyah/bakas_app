@@ -12,15 +12,16 @@
 
     {{-- Bootstrap icon --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href={{ "css/style.css" }}>
     <title>Bakas Store</title>
 </head>
 
-<body background="{{ asset('img/wp.png') }}" background-size="100px">
+<body>
     {{-- <div class="row-auto"> --}}
-    @include('partials.navbar')
-    <div class="container mt-4">
-        @yield('container')
-    </div>
+        @include('partials.navbar')
+        <div class="container mt-4">
+            @yield('container')
+        </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
