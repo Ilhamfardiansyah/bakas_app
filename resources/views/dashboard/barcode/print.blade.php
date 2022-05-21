@@ -17,6 +17,9 @@
                         <table id="table_id" class="table table-bordered table-hover">
                             <thead>
                                 <tr>
+                                    <th>
+                                        <input type="checkbox" name="select_all" id="select_all">
+                                    </th>
                                     <th>PLU</th>
                                     <th>Nama Barang</th>
                                     <th>Barcode</th>
@@ -44,6 +47,9 @@
                             </tbody>
                             <tfoot>
                                 <tr>
+                                    <th>
+                                        <input type="checkbox" name="select_all" id="select_all">
+                                    </th>
                                     <th>PLU</th>
                                     <th>Nama Barang</th>
                                     <th>Barcode</th>

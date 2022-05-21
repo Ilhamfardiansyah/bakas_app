@@ -58,6 +58,7 @@ class DashboardPostController extends Controller
             'plu' => 'required|unique:posts', 
             'nama_barang' => 'required',
             'barcode' => 'required|unique:posts',
+            'harga_jual' => 'required',
             'rak_id' => 'required',
             'stok' => 'required',
             'harga_satuan' => 'required',

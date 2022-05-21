@@ -69,6 +69,16 @@
                                 </div>
                                 @enderror
                             </div>
+                            <div class="form-group col-md-4">
+                                <label for="harga_jual" class="form-label">Harga Jual</label>
+                                <input type="number" class="form-control @error('harga_jual') is-invalid @enderror"
+                                    id="harga_jual" name="harga_jual" value="{{ old('harga_jual') }}" required>
+                                @error('harga_jual')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+                            </div>
                             <div class="form-group col-md-2">
                                 <label for="rak_id" class="form-label @error('rak_id') is-invalid @enderror">Rak</label>
                                 <div class="form-group">
@@ -92,7 +102,7 @@
                                 @enderror
                             </div>
                             <div class="form-group col-md-3">
-                                <label for="harga_satuan" class="form-label">Harga Satuan</label>
+                                <label for="harga_satuan" class="form-label">Harga Supplier</label>
                                 <input type="number" class="form-control @error('harga_satuan') is-invalid @enderror"
                                     id="harga_satuan" onkeyup="sum();" name="harga_satuan"
                                     value="{{ old('harga_satuan') }}" required>
@@ -167,6 +177,7 @@
                             <th>PLU</th>
                             <th>Nama Barang</th>
                             <th>Barcode</th>
+                            <th>Harga Jual</th>
                             <th>Stok</th>
                             <th>Harga Satuan</th>
                             <th>Total Harga</th>
@@ -183,6 +194,7 @@
                             <td>{{ $post->plu }}</td>
                             <td>{{ $post->nama_barang }}</td>
                             <td>{{ $post->barcode }}</td>
+                            <td>{{ $post->harga_jual }}</td>
                             <td>{{ $post->stok }}</td>
                             <td>{{ number_format($post->harga_satuan, 0,',', '.') }}</td>
                             <td>{{ number_format($post->sub_total, 0,',', '.') }}</td>
@@ -198,6 +210,7 @@
                             <th>PLU</th>
                             <th>Nama Barang</th>
                             <th>Barcode</th>
+                            <th>Harga Jual</th>
                             <th>Stok</th>
                             <th>Harga Satuan</th>
                             <th>Total Harga</th>

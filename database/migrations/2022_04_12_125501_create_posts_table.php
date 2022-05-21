@@ -24,6 +24,7 @@ return new class extends Migration
             $table->text('nama_barang');
             $table->char('barcode');
             $table->char('stok');
+            $table->char('harga_jual');
             $table->char('harga_satuan');
             $table->char('sub_total');
             $table->timestamp('publish_at')->nullable();

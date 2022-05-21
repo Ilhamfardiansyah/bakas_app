@@ -16,6 +16,8 @@ use App\Models\Suplaier;
 use App\Models\Detail;
 use App\Models\Size;
 use App\Http\Controllers\ReturController;
+use App\Http\Controllers\BarcodeController;
+
 
 
 
@@ -65,3 +67,4 @@ Route::get('/dashboard/search/{barcode}', [ReturController::class, 'search']);
 Route::get('/dashboard/destroy/{barcode}', [ReturController::class, 'destroy']);
 Route::get('/edit/{post:plu}', [ReturController::class, 'edit']);
 Route::put('/dashboard/edit/{post:plu}', [ReturController::class, 'update']);
+Route::get('/dashboard/cetak/', [BarcodeController::class, 'cetak']);

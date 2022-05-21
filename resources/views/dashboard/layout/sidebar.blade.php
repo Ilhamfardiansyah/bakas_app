@@ -76,7 +76,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="/dashnoard/barcode" class="nav-link {{ Request::is('dashboard/barcode') ? 'active' : '' }}">
+                                <a href="/dashboard/cetak" class="nav-link {{ Request::is('dashboard/barcode') ? 'active' : '' }}">
                                     <i class="fa-solid fa-print"></i>
                                     <p>Cetak Barcode</p>
                                 </a>
