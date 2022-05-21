@@ -63,3 +63,5 @@ Route::post('/dashboard/rak', [RakController::class, 'store']);
 Route::get('/dashboard/retur/index', [ReturController::class, 'index']);
 Route::get('/dashboard/search/{barcode}', [ReturController::class, 'search']);
 Route::get('/dashboard/destroy/{barcode}', [ReturController::class, 'destroy']);
+Route::get('/edit/{post:plu}', [ReturController::class, 'edit']);
+Route::put('/dashboard/edit/{post:plu}', [ReturController::class, 'update']);

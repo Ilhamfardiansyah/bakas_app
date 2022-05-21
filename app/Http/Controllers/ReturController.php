@@ -30,4 +30,25 @@ class ReturController extends Controller
         toast('Produk Berhasil Hapus','success');
         return redirect('/dashboard/posts');
     }
+
+    public function edit(Post $post)
+    {
+            
+        return view('dashboard.posts.edit', [
+            'post' => $post
+        ]);
+    }
+
+    public function update(Request $request, Post $post)
+    {
+        $validatedData = $request->validate([
+            'nama_barang' => 'required'
+        ]);
+
+        Post::where('plu' , $post->plu)
+            ->update($validatedData);
+
+        toast('Nama Produk Berhasil Diedit','success');
+        return redirect('/dashboard/posts/create');   
+    }
 }
